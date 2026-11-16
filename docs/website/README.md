@@ -2,7 +2,7 @@
 
 This directory contains the **website generator, styles, scripts, images, and build/deployment documentation** for a responsive, searchable **static HTML website** generated from the repository's Markdown checklists. No JavaScript framework, database, or hosted build service is needed.
 
-**`docs/website/` is website source code, not a checklist folder.** The **91 numbered checklist templates** live in `../../lists/` and its `frontend/`, `backend/`, and `AI/` subfolders; the repository root holds guides and informational resources. The migration worksheet lives under `lists/frontend/references/` and the source-coverage audit under `lists/references/`. These unnumbered files appear as **Resources** in the site, separate from numbered checklist counts. Files under `docs/website/` are website code, assets, and site-specific documentation, not checklist criteria.
+**`docs/website/` is website source code, not a checklist folder.** The **91 numbered checklist templates** live in `../../lists/` and its `frontend/`, `backend/`, and `AI/` subfolders; the repository root holds `README.md` and `AGENTS.md`, with other guides in `docs/`. The migration worksheet lives under `lists/frontend/references/` and the source-coverage audit under `lists/references/`. These unnumbered files appear as **Resources** in the site, separate from numbered checklist counts. Files under `docs/website/` are website code, assets, and site-specific documentation, not checklist criteria.
 
 ## Build
 

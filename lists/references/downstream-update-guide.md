@@ -25,7 +25,7 @@ The last command returns **exit status 2** for an actionable change, **0** if no
 - **New IDs:** assess applicability, assign an owner and obtain evidence; default to UNKNOWN.
 - **Reworded or re-tiered IDs:** reassess against the current release. An earlier PASS does not automatically transfer; tiers are contextual triage, not externally audited severity.
 - **Moved IDs:** check whether new scope ownership changes applicability or the evidence needed.
-- **Removed IDs:** retain the historic result and source SHA, consult the [ID history](id-history.md) and [changelog](../../CHANGELOG.md), and do not silently remap or reuse the ID.
+- **Removed IDs:** retain the historic result and source SHA, consult the [ID history](id-history.md) and [changelog](../../docs/CHANGELOG.md), and do not silently remap or reuse the ID.
 - **Unchanged IDs:** preserve historical results; reconsider expiring evidence, environment changes and new threat models before a new release decision.
 
 For a bounded first pass use [Core 50](core-50.md), a [25-check scope starter](minimum-viable-by-scope.md), or a [25–100-check profile](scoped-review-generator.md). A **full risk-based audit** may need many more checks, independent security verification, and applicable external requirements; there is no universal sufficient minimum.
