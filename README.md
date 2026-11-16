@@ -69,7 +69,7 @@ To install for just one agent, use `-a codex` or `-a claude-code`; add `-g` for 
 
 After installation, ask an agent: **“Review this app's release readiness using awesome-checklists; cite actual checklist IDs and evidence for each finding.”** Other examples: “Audit our API security and database controls,” or “Assess this RAG/agent implementation for evaluation and guardrail gaps.”
 
-> **Public repository:** The skill and checklists can be accessed anonymously, subject to GitHub's public access and rate limits. Authentication is optional for readers; see [agent skill internals](DEVELOPMENT.md#agent-skill-internals-and-source-pinning) for credential options and source pinning.
+For source pinning, anonymous access, and skill fetch-helper internals, see [agent skill internals](DEVELOPMENT.md#agent-skill-internals-and-source-pinning).
 
 ## Why use this repository?
 
