@@ -69,7 +69,7 @@ To install for just one agent, use `-a codex` or `-a claude-code`; add `-g` for 
 
 After installation, ask an agent: **“Review this app's release readiness using awesome-checklists; cite actual checklist IDs and evidence for each finding.”** Other examples: “Audit our API security and database controls,” or “Assess this RAG/agent implementation for evaluation and guardrail gaps.”
 
-For source pinning, anonymous access, and skill fetch-helper internals, see [agent skill internals](DEVELOPMENT.md#agent-skill-internals-and-source-pinning).
+> **Public repository:** The skill and checklists can be accessed anonymously, subject to GitHub's public access and rate limits. Authentication is optional for readers; see [agent skill internals](DEVELOPMENT.md#agent-skill-internals-and-source-pinning) for credential options and source pinning.
 
 ## Why use this repository?
 
@@ -95,7 +95,7 @@ All 91 numbered checklist files live in [`lists/`](lists/): shared checklists di
 
 *Counts reflect the repository's current inventory and may change as checklists evolve. Numbered filenames reflect the historical organization within each `lists/` folder; existing filename prefixes are frozen to preserve external links, and future gaps are allowed. Stable checklist IDs, not filename numbers, are the durable review references.*
 
-For inventory validation commands, machine-readable exports, stable ID ownership, and source freshness, see [DEVELOPMENT.md](DEVELOPMENT.md).
+For inventory validation commands, machine-readable exports, stable ID ownership, and source freshness, see [DEVELOPMENT.md](DEVELOPMENT.md). The [AGENT domain map](lists/references/agent-domain-map.md) and [CI-enforced contract](lists/references/agent-domain-contract.json) check all 141 IDs and section links across the AI and backend source files.
 
 ### Begin with a smaller, risk-tiered review
 
