@@ -2,6 +2,10 @@
 
 **Public disclosure (2026-11-15).** This library is a **maintainer-curated collection of review prompts**, not a vendor-neutral certification, audited security baseline, or a set of requirements independently examined one by one. The repository contains checklists based on cited public references, editorial integration, and maintenance changes. **AI-assisted drafting and transformations have been used for portions of the 2026-11-15 changes** (including generated priority suggestions, documentation and helper code) under maintainer direction. The repository **does not possess a complete, per-ID historical ledger** of whether each of the 4,215 checks was written by a human, proposed by a model, externally sourced or independently reviewed. Accordingly, no global claim of full human expert validation is made.
 
+## Licensing provenance is separate from content validation
+
+Original editorial text is intended for CC0 and original executable tooling for MIT under the [licensing scope guide](LICENSING.md). Neither the incomplete historical per-ID authorship record nor automated formatting checks establish that Pro-GenAI has rights to waive copyright in *every* existing contribution or any third-party excerpt. For new and historical content, track author/source, permission and exceptions before claiming CC0 coverage; an SPDX marker is an identification aid, not a clearance decision. External standards and trademarks are not relicensed.
+
 ## What has and has not been validated
 
 - **Mechanically verifiable:** Local scripts check numbered file counts, IDs, unchecked source templates, formatting, local links and metadata. The two legacy source-lint and website workflows remain disabled. New curation CI checks template parity, source integrity and Awesome list conventions; CI does not replace expert review. Passing them does not establish security, legal or AI correctness.

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Offline tests for checklist inventory validation."""
 import importlib.util
 from pathlib import Path

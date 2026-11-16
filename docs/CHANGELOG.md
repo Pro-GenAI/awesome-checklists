@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-16 — Licensing scope, SPDX and voluntary reuse credit
+
+- Documented the CC0-for-original-content / MIT-for-code path scopes, third-party exclusions and mixed-file rules in [LICENSING.md](LICENSING.md); the legal licenses themselves are unchanged.
+- Added SPDX license identifiers to original executable source files and the drop-in checklist Markdown templates without altering checklist IDs or criteria.
+- Added contribution provenance and rights-review checkpoints and an optional reuse credit that does not imply certification. Historical authorship and third-party license clearance remain subject to review; no global clearance is claimed.
+
 ## 2026-11-16 — Local pin verification, helper tests and filename stability
 
 - Added an opt-in offline pin-ancestry verifier for full Git clones, with test coverage for missing pins and missing branch refs. The existing source pin was verified against `main` through GitHub comparison but is not auto-refreshed.

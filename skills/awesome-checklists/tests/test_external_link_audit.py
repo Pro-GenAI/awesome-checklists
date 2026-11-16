@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Offline regression checks for weekly external-link audit coverage."""
 from pathlib import Path
 from urllib.error import HTTPError

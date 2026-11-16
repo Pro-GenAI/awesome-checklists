@@ -1,5 +1,6 @@
 # Prompt & Context Engineering — drop-in review checklist
 
+<!-- SPDX-License-Identifier: CC0-1.0 -->
 Copy these unchecked items into a project PR description or issue. Each item maps to a stable ID in the canonical library. Mark as complete **only after** recording project-specific evidence; a checkbox is not certification.
 
 - [ ] **PROMPT-006** — Separate trusted instructions from user and retrieved material. [Canonical check](../../lists/AI/09_Prompt_Engineering_and_Versioning.md). *Why:* Stops external content from being promoted into privileged instructions.

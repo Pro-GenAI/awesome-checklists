@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """End-to-end offline tests for the JSON export and review template."""
 import json
 from pathlib import Path

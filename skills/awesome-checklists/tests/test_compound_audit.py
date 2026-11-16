@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Offline tests for conservative compound-check candidate detection."""
 import importlib.util
 from pathlib import Path

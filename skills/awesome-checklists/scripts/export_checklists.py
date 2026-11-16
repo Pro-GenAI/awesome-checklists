@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Export source checklist criteria as machine-readable JSON, with optional review template.
 
 All judgments are project-specific. The repository's checkboxes never represent review results.

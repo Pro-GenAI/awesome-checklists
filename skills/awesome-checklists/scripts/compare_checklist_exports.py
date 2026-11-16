@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Compare two versioned checklist JSON exports without changing review outcomes.
 
 The inputs come from export_checklists.py and must be from the same scope.

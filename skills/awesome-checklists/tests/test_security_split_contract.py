@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Source-level regression contract for editorial SEC-012/013/014 split.
 
 Passing these tests verifies structure, not security or expert validation.

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Validate numbered checklist inventory and unique, unchecked stable IDs offline."""
 from __future__ import annotations
 

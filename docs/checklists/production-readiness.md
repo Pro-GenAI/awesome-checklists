@@ -1,5 +1,6 @@
 # Production Readiness — drop-in review checklist
 
+<!-- SPDX-License-Identifier: CC0-1.0 -->
 Copy these unchecked items into a project PR description or issue. Each item maps to a stable ID in the canonical library. Mark as complete **only after** recording project-specific evidence; a checkbox is not certification.
 
 - [ ] **PERF-024** — Test cold-start and warm-start runtime initialization. [Canonical check](../../lists/backend/27_Performance_and_Scalability.md). *Why:* Catches failures hidden by warm developer machines or import-time side effects.

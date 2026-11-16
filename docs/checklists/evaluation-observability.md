@@ -1,5 +1,6 @@
 # Evaluation & Observability — drop-in review checklist
 
+<!-- SPDX-License-Identifier: CC0-1.0 -->
 Copy these unchecked items into a project PR description or issue. Each item maps to a stable ID in the canonical library. Mark as complete **only after** recording project-specific evidence; a checkbox is not certification.
 
 - [ ] **EVAL-023** — Version golden evaluation cases with expected outcomes. [Canonical check](../../lists/AI/15_AI_Evaluation_and_Regression.md). *Why:* Prevents silent test-dataset drift across prompt and model releases.

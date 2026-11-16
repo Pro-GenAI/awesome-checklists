@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Generate/check every stable ID prefix, numeric interval and owning source path."""
 from __future__ import annotations
 

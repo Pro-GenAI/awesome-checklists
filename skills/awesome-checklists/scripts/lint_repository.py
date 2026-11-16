@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Lint numbered checklists, stable IDs, Markdown links, and source formatting.
 
 Offline checks run on every main push; --external performs optional advisory

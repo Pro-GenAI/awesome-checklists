@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Maintain the split from AGENT-026 into independent acceptance assertions."""
 import json
 from pathlib import Path

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Offline tests for scoped generator and reviewed external-ID starter metadata."""
 import json
 from pathlib import Path

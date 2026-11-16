@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Offline inventory and source-date freshness regression tests."""
 import importlib.util
 from datetime import date

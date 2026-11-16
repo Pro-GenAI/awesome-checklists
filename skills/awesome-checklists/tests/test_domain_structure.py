@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Offline regression tests for cross-scope AGENT domain continuity and links."""
 from __future__ import annotations
 

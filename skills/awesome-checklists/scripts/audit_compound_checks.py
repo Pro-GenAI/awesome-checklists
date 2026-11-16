@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """List possible multi-verification checklist items for HUMAN editorial review.
 
 Flags are heuristic signals, not proof that a check should be split. No files are edited.

@@ -1,5 +1,6 @@
 # RAG & Data Pipelines — drop-in review checklist
 
+<!-- SPDX-License-Identifier: CC0-1.0 -->
 Copy these unchecked items into a project PR description or issue. Each item maps to a stable ID in the canonical library. Mark as complete **only after** recording project-specific evidence; a checkbox is not certification.
 
 - [ ] **RAG-023** — Select chunking using document structure and retrieval evidence. [Canonical check](../../lists/AI/10_RAG_and_Knowledge_Bases.md). *Why:* Avoids slicing away relevant facts or merging unrelated passages.

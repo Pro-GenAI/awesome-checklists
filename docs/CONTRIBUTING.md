@@ -4,6 +4,19 @@ The repository is **public**. Readers can clone, inspect and install its skill w
 
 **Review-first contribution policy:** Prefer pull requests for substantive changes and qualified review for risk-sensitive edits. The legacy source-lint and website-build workflows remain disabled. The new `quality-gates.yml` validates curated README conventions and lifecycle catalog integrity on pull requests; `link-health.yml` checks curated links on a weekly schedule. Also run and record appropriate local verification commands before merging. Authorized maintainers may commit directly to `main`, but a direct push is not independent peer validation. External contributions are welcome.
 
+## Licensing and contributor rights
+
+The [licensing scope guide](LICENSING.md) distinguishes **CC0-1.0** for original checklists/documentation from **MIT** for original code and automation. Before contributing, ensure you have the right to offer your original contribution under the applicable license; this is not a copyright assignment. Do not include material from employers, clients, standards bodies, other repositories, or AI-generated outputs unless you have assessed the relevant rights and terms.
+
+For each substantive addition or adaptation, provide in the issue/PR:
+
+1. **Origin and authority:** Identify which text or code you created, whether it was adapted from another source, and the permission or license enabling the proposed contribution.
+2. **Upstream obligations:** Link to source material and record its license/version, required attribution, and any known restrictions; do not reproduce protected standards text just because it is publicly readable.
+3. **License exception or uncertainty:** Identify exact file paths, sections or assets that cannot confidently be offered under CC0 or MIT. Prefer a link or independently written summary; maintainers must obtain permission or exclude uncertain content before applying an SPDX identifier.
+4. **Contributor confirmation:** Confirm you have authority to contribute under the applicable repository license, or explain the rights question for maintainer review.
+
+For older content with incomplete provenance, maintainers must not assume the CC0 waiver is authorized: record a rights review, obtain permission as needed, or explicitly exclude/remove the material. Do not represent a new SPDX marker, passed CI, or an attribution link as proof of ownership. Third-party trademarks, logos and linked standards keep their own rights.
+
 ## Authorship and validation policy
 
 Read [AUTHORSHIP.md](AUTHORSHIP.md) before adding or changing review criteria. Publicly disclose AI-assisted candidates and missing provenance where known; **do not** claim every checklist item was independently inspected or tested. Record the authoritative source (including standard version/exact clause, if appropriate), drafting/assistance origin, person/role and date of any *actual* human editorial review, and any outstanding gaps. If human or domain-expert validation is incomplete, state that explicitly.
@@ -66,4 +79,4 @@ npx --yes awesome-lint docs/AWESOME.md
 pre-commit run --all-files  # if pre-commit is installed
 ```
 
-The Awesome linter checks the compact `AWESOME.md` curated index rather than applying single-list formatting rules to the extensive reference-library README. Its GitHub metadata rules also require the `awesome` and `awesome-list` repository topics, which must be added by a repository administrator. Code and repository automation remain MIT; the proposed CC0 text license requires maintainer rights review before merger.
+The Awesome linter checks the compact `AWESOME.md` curated index rather than applying single-list formatting rules to the extensive reference-library README. Its GitHub metadata rules also require the `awesome` and `awesome-list` repository topics, which must be added by a repository administrator. Code and repository automation use MIT; CC0 is the intended license for original checklist and editorial text where contributors hold the relevant rights. Historical material with unclear provenance requires review before making any broader rights claim.

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Only manually curated tiers may contribute severity score to review selection."""
 import sys
 from pathlib import Path

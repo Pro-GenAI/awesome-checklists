@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Validate cross-scope AGENT IDs and section links; structural check, not audit."""
 from __future__ import annotations
 

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Offline tests for downstream checklist-source drift reports."""
 from pathlib import Path
 import json

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Offline smoke tests for the standalone agent skill and helper."""
 from pathlib import Path
 import subprocess

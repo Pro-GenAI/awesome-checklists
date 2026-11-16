@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Read explicitly selected checklists at an immutable source revision (stdlib only)."""
 from __future__ import annotations
 

@@ -155,6 +155,16 @@ For a self-hosted SVG badge option, see [badge assets](docs/DEVELOPMENT.md#self-
 > [!IMPORTANT]
 > **This is a maintainer's self-declaration of having used the checklists, not an approval issued by Pro-GenAI or an independent audit.** The badge does not certify security, compliance, accessibility, AI safety, or release readiness. Display it only after relevant checks were evaluated and results, outstanding risks, and exceptions were documented. Include a link to the project's own review summary where appropriate, and update or remove the badge if its basis is no longer current.
 
+### Optional credit for reuse (no review claim)
+
+CC0 does **not** require attribution, but a link helps others discover and improve the source. If you use the checklists without performing a documented review, you can voluntarily write:
+
+```markdown
+Uses [awesome-checklists](https://github.com/Pro-GenAI/awesome-checklists) by Pro-GenAI.
+```
+
+This credit is **not** a certification, endorsement or substitute for the documented-review badge above. See the [licensing guide](docs/LICENSING.md) for details.
+
 ## Important: a reference, not the final word
 
 > [!WARNING]
@@ -172,7 +182,7 @@ Repository architecture, ID registries, source pinning, export/generator command
 
 ## License
 
-Original checklist text, editorial curation and documentation for which Pro-GenAI has sufficient rights are offered under [CC0 1.0 Universal](LICENSE) for low-friction reuse. Original Python and JavaScript source code, website tooling, automation scripts and reusable skill code remain under the [MIT License](LICENSE-CODE). Linked third-party standards, logos, trademarks, excerpts and separately attributed materials retain their respective rights; CC0 does not waive others' rights. Maintainers should confirm they have rights to apply CC0 to previously contributed material before merging this license change.
+Original checklist text, editorial curation and documentation for which contributors have sufficient rights are offered under [CC0 1.0 Universal](LICENSE) for frictionless internal and commercial reuse. Original executable source, agent-skill scripts, website tooling and automation use the [MIT License](LICENSE-CODE). See the [file-by-file licensing and SPDX guide](docs/LICENSING.md) for the scope table, mixed files, third-party exclusions and contributor-rights procedure. Neither license grants rights to linked standards, trademarks, logos or uncleared third-party material.
 
 ## Contributions and suggestions are encouraged
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Generate a bounded, project-specific UNKNOWN-first Markdown or JSON review.
 
 This is a deterministic triage aid, not an audit, severity determination, or

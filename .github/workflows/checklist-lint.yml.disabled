@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 name: Checklist source lint
 
 # Deliberately independent of disabled website.yml.disabled.

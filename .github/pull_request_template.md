@@ -19,6 +19,8 @@ Describe which checklist IDs, lifecycle phase or curated resources change and wh
 - [ ] I ran the relevant commands in `docs/CONTRIBUTING.md` (or explain why not).
 - [ ] I did **not** mark review checkboxes PASS without target-specific evidence.
 - [ ] I disclosed AI assistance, reference provenance and any human-validation gaps.
+- [ ] I own or have permission to contribute my original content under the applicable [CC0/MIT scope](../docs/LICENSING.md), or I have identified the precise material requiring a rights exception/review.
+- [ ] I documented relevant third-party licenses, attribution obligations and excluded assets/excerpts (or noted none used).
 
 ## Test evidence / exceptions
 

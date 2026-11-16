@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Validate drop-in Markdown and JSON parity against canonical stable-ID sources."""
 from __future__ import annotations
 

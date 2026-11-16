@@ -1,5 +1,6 @@
 # Agent Safety & Runtime Guardrails — drop-in review checklist
 
+<!-- SPDX-License-Identifier: CC0-1.0 -->
 Copy these unchecked items into a project PR description or issue. Each item maps to a stable ID in the canonical library. Mark as complete **only after** recording project-specific evidence; a checkbox is not certification.
 
 - [ ] **AGENT-026** — Reject tool calls outside the trusted tool registry. [Canonical check](../../lists/AI/11_AI_Agents_and_Tool_Orchestration.md). *Why:* Prevents agent output from inventing executable capabilities.

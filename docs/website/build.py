@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Build a dependency-light, SEO-ready static site from repository Markdown files."""
 from __future__ import annotations
 

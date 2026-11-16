@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Check public repository metadata, source pin, spec references and README scope.
 
 Static content checks are reproducible offline. GitHub Actions workflows are disabled.

@@ -1,5 +1,6 @@
 # Drop-in GenAI and agentic review templates
 
+<!-- SPDX-License-Identifier: CC0-1.0 -->
 These **five small task lists** make the existing [canonical review library](../../lists/AI/) convenient inside project pull requests and issues. Unlike the 4,215-ID source library, they are short entry points. Copy only applicable checks; record evidence and the target-project commit; keep **all checks unchecked by default**.
 
 | Engineering phase | Copy into a PR/issue | Typical failure addressed |

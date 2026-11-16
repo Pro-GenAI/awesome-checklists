@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 (() => {
   'use strict';
   const input = document.getElementById('search');

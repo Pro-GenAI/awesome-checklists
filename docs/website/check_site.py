@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Sanity-check generated pages, SEO files, and the Markdown inventory."""
 from html.parser import HTMLParser
 from pathlib import Path

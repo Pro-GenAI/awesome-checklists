@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Targeted offline tests for repository Markdown link and format lint."""
 import importlib.util
 import json

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Verify checklist headings and GitHub-style local Markdown section anchors.
 
 This is a structural test, not external URL validation or a safety audit.

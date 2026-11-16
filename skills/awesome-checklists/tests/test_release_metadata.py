@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Release metadata consistency and current documentation tests."""
 import json
 from pathlib import Path

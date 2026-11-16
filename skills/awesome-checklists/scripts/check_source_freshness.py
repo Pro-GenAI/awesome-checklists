@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Flag outdated checklist source reviews; dates are not proof links remain valid."""
 from __future__ import annotations
 

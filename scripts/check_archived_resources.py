@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Warn/fail on archived GitHub repositories referenced by the curated entry points.
 
 Only scans README and drop-in lists; full canonical sources have their own advisory link audit.

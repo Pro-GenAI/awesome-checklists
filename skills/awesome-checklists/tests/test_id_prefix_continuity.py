@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Regression coverage: stable IDs must stay contiguous across scopes."""
 from pathlib import Path
 import sys

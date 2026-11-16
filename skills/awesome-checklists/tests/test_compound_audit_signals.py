@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Tests for the editorial compound-check heuristic, not semantic judgment."""
 from pathlib import Path
 import json
