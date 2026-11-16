@@ -83,7 +83,7 @@ For source pinning, anonymous access, and skill fetch-helper internals, see [age
 
 ## Explore the checklists
 
-All 91 numbered checklist files live in [`lists/`](lists/): shared checklists directly in `lists/`, and the other scopes in `lists/frontend/`, `lists/backend/`, and `lists/AI/`. The repository separates shared concerns from implementation-specific checks so that each review can focus on the right work. **AI-specific interface checks (including fine-tuning dashboards and agent interfaces) live under `lists/AI/` in their domain's `Frontend Checks` section**, rather than as separate AI-domain files under `lists/frontend/`. General frontend checks remain under `lists/frontend/`.
+All 91 checklists live in [`lists/`](lists/), grouped into shared, frontend, backend, and AI scopes. AI-specific interface checks are included in the relevant AI domain files.
 
 | Scope | Files | Checks | What it covers |
 | --- | ---: | ---: | --- |
@@ -93,17 +93,17 @@ All 91 numbered checklist files live in [`lists/`](lists/): shared checklists di
 | **[AI](lists/AI/)** | 22 | 1,712 | Model selection, training, RAG, agents, evaluation, guardrails, monitoring, and their AI-specific frontend integration checks |
 | **Total** | **91** | **4,215** | |
 
-*Counts reflect the repository's current inventory and may change as checklists evolve. Numbered filenames reflect the historical organization within each `lists/` folder; existing filename prefixes are frozen to preserve external links, and future gaps are allowed. Stable checklist IDs, not filename numbers, are the durable review references.*
+*Counts reflect the current inventory and may change.*
 
-For inventory validation commands, machine-readable exports, stable ID ownership, and source freshness, see [DEVELOPMENT.md](DEVELOPMENT.md). The [AGENT domain map](lists/references/agent-domain-map.md) and [CI-enforced contract](lists/references/agent-domain-contract.json) check all 141 IDs and section links across the AI and backend source files.
+For inventory generation, stable ID ownership, and other technical details, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ### Begin with a smaller, risk-tiered review
 
-For a first pass, use the [Core 50 starter review](lists/references/core-50.md): **12 shared, 12 frontend, 12 backend and 14 AI checks**, all drawn from existing stable IDs. Choose **only applicable** scopes and add checks for your system's architecture, threat model, industry, and intended release. It is a **starter set, not a certification or a universally sufficient minimum**.
+For a first pass, use the [Core 50 starter review](lists/references/core-50.md). Choose only applicable scopes and add checks for your system's architecture, risks, and release requirements. This is a starting point, not a certification or universal minimum.
 
-The curated checks have contextual `P0` (potential release blocker), `P1` (important assurance) and `P2` (supporting/contextual) labels. **These 50 retain manually curated priorities**. The remaining **4,165 checks now have provisional text-derived P0/P1/P2 labels**, which require context-specific review; labels are not audited severity determinations or permission to skip a control. A reviewer must assign project-specific severity and review the applicable domain release gates.
+Priority labels are suggestions, not audited severity determinations or permission to skip a control. Reviewers must assess the actual project risks and applicable release gates.
 
-For a real, evidence-linked example, see the [sample review of this repository](lists/references/example-review.md). The [agent-control overlap assessment](lists/references/overlap-review.md) distinguishes policy, enforcement and test evidence instead of silently deleting stable IDs. The reported **4,215** counts unique checklist IDs; it is **not a verified semantic-deduplication count**.
+For an evidence-linked example, see the [sample review of this repository](lists/references/example-review.md).
 
 ### Choose the review depth
 
@@ -125,7 +125,7 @@ No fixed number of checks guarantees readiness. Priorities outside the Core 50 a
 | **An API or data platform** | [Backend API design](lists/backend/07_API_Design_and_Integrations.md) · [Data & database management](lists/backend/08_Data_and_DatabaseManagement.md) |
 | **An AI-powered product** | [AI evaluation & governance](lists/AI/03_AI_Evaluation_and_Governance.md) · [RAG & knowledge bases](lists/AI/10_RAG_and_Knowledge_Bases.md) · [Agents & tool orchestration](lists/AI/11_AI_Agents_and_Tool_Orchestration.md) |
 
-Browse the complete [lists/frontend/](lists/frontend/), [lists/backend/](lists/backend/), and [lists/AI/](lists/AI/) directories, or use [AGENTS.md](AGENTS.md) for the detailed domain inventory, stable ID conventions, and maintenance guidance.
+Browse the complete [frontend](lists/frontend/), [backend](lists/backend/), and [AI](lists/AI/) directories.
 
 ## How to use these checklists
 
