@@ -1,6 +1,6 @@
 # Awesome Checklists [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-![Awesome Checklists banner — frontend, backend, and AI review checklists](website/assets/awesome-checklists-banner.svg)
+![Awesome Checklists banner — frontend, backend, and AI review checklists](docs/website/assets/awesome-checklists-banner.svg)
 
 **Build with intention. Review with evidence. Launch with fewer blind spots.**
 
@@ -12,7 +12,7 @@ Great products are rarely derailed by one spectacular mistake. More often, the p
 
 **Awesome Checklists** helps teams ask those questions *before* they become expensive surprises. Use it to turn vague readiness discussions into structured, evidence-based reviews—without reinventing a process for every project.
 
-**Short curated Awesome index:** [AWESOME.md](AWESOME.md) is the linted, phase-oriented selection; this README introduces the source library and agent skill; [DEVELOPMENT.md](DEVELOPMENT.md) contains technical and maintenance details.
+**Short curated Awesome index:** [AWESOME.md](docs/AWESOME.md) is the linted, phase-oriented selection; this README introduces the source library and agent skill; [DEVELOPMENT.md](docs/DEVELOPMENT.md) contains technical and maintenance details.
 
 ## Contents
 
@@ -47,7 +47,7 @@ These phase-oriented [drop-in PR/issue templates](checklists/README.md) compleme
 
 `[Security Audit]` [Production readiness checklist](checklists/production-readiness.md) — verify cold-start behavior, secrets scanning, quotas, dependency/container patching and rate-limit recovery before promoting a release. Sources: [Backend operations](lists/backend/30_DevOps_and_CI_CD.md), [performance](lists/backend/27_Performance_and_Scalability.md) and [inference serving](lists/AI/12_AI_Inference_and_Serving.md).
 
-For Pro-GenAI implementation examples and where to apply these checks, see [development companions](DEVELOPMENT.md#pro-genai-implementation-companions).
+For Pro-GenAI implementation examples and where to apply these checks, see [development companions](docs/DEVELOPMENT.md#pro-genai-implementation-companions).
 
 ## Start with 25–50 checks
 
@@ -69,11 +69,11 @@ To install for just one agent, use `-a codex` or `-a claude-code`; add `-g` for 
 
 After installation, ask an agent: **“Review this app's release readiness using awesome-checklists; cite actual checklist IDs and evidence for each finding.”** Other examples: “Audit our API security and database controls,” or “Assess this RAG/agent implementation for evaluation and guardrail gaps.”
 
-For source pinning, anonymous access, and skill fetch-helper internals, see [agent skill internals](DEVELOPMENT.md#agent-skill-internals-and-source-pinning).
+For source pinning, anonymous access, and skill fetch-helper internals, see [agent skill internals](docs/DEVELOPMENT.md#agent-skill-internals-and-source-pinning).
 
 ## Why use this repository?
 
-**What is new here—and what is not:** OWASP ASVS, NIST AI RMF, accessibility guidance and established release-readiness practices already cover many of these topics. The repository's contribution is a cross-scope synthesis with stable IDs, agent-assisted retrieval, bounded review generation and evidence-record conventions—not novel security standards or an independent certification. Its source files have not all received independent expert or field validation; low or high GitHub engagement is not a substitute for that evidence. See [authorship and validation limits](AUTHORSHIP.md).
+**What is new here—and what is not:** OWASP ASVS, NIST AI RMF, accessibility guidance and established release-readiness practices already cover many of these topics. The repository's contribution is a cross-scope synthesis with stable IDs, agent-assisted retrieval, bounded review generation and evidence-record conventions—not novel security standards or an independent certification. Its source files have not all received independent expert or field validation; low or high GitHub engagement is not a substitute for that evidence. See [authorship and validation limits](docs/AUTHORSHIP.md).
 
 - **Spot blind spots earlier.** Surface overlooked requirements, security risks, accessibility gaps, operational dependencies, and AI-specific failure modes.
 - **Make reviews actionable.** Checks are written to prompt verification, not just agreement. Record evidence, ownership, exceptions, and follow-up work in your project's review records.
@@ -95,7 +95,7 @@ All 91 checklists live in [`lists/`](lists/), grouped into shared, frontend, bac
 
 *Counts reflect the current inventory and may change.*
 
-For inventory generation, stable ID ownership, and other technical details, see [DEVELOPMENT.md](DEVELOPMENT.md).
+For inventory generation, stable ID ownership, and other technical details, see [DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ### Begin with a smaller, risk-tiered review
 
@@ -150,7 +150,7 @@ Copy this Markdown into your project's README (no badge hosting required):
 [![Reviewed with awesome-checklists](https://img.shields.io/badge/%E2%9C%93%20Reviewed%20with-awesome--checklists-168554?style=for-the-badge&labelColor=0C2946)](https://github.com/Pro-GenAI/awesome-checklists)
 ```
 
-For a self-hosted SVG badge option, see [badge assets](DEVELOPMENT.md#self-hosted-review-badge).
+For a self-hosted SVG badge option, see [badge assets](docs/DEVELOPMENT.md#self-hosted-review-badge).
 
 > [!IMPORTANT]
 > **This is a maintainer's self-declaration of having used the checklists, not an approval issued by Pro-GenAI or an independent audit.** The badge does not certify security, compliance, accessibility, AI safety, or release readiness. Display it only after relevant checks were evaluated and results, outstanding risks, and exceptions were documented. Include a link to the project's own review summary where appropriate, and update or remove the badge if its basis is no longer current.
@@ -168,7 +168,7 @@ For a self-hosted SVG badge option, see [badge assets](DEVELOPMENT.md#self-hoste
 
 ## Development and maintenance
 
-Repository architecture, ID registries, source pinning, export/generator commands, validation, CI, source provenance and technical implementation examples are documented in [DEVELOPMENT.md](DEVELOPMENT.md). For contribution requirements see [CONTRIBUTING.md](CONTRIBUTING.md), and for agent-maintainer instructions see [AGENTS.md](AGENTS.md).
+Repository architecture, ID registries, source pinning, export/generator commands, validation, CI, source provenance and technical implementation examples are documented in [DEVELOPMENT.md](docs/DEVELOPMENT.md). For contribution requirements see [CONTRIBUTING.md](docs/CONTRIBUTING.md), and for agent-maintainer instructions see [AGENTS.md](AGENTS.md).
 
 ## License
 
@@ -182,7 +182,7 @@ This collection is intended to improve through practical experience, constructiv
 
 - **[Open an issue](https://github.com/Pro-GenAI/awesome-checklists/issues)** to propose an improvement or report an outdated, ambiguous, duplicated, or missing check.
 - **Make the suggestion specific.** Include the relevant file and checklist ID (if any), the proposed change, why it matters, where it applies, and a current primary reference when possible.
-- **Contribute or report a gap.** See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution and review procedures, or [AGENTS.md](AGENTS.md) for stable-ID conventions and local checks.
+- **Contribute or report a gap.** See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for contribution and review procedures, or [AGENTS.md](AGENTS.md) for stable-ID conventions and local checks.
 - **Small improvements count.** Clearer wording, corrected links, stronger caveats, and well-supported counterexamples make the collection more useful.
 
 The goal is not to defend every existing item. **The goal is to make the questions better.**

@@ -17,7 +17,7 @@ from urllib.parse import quote, unquote, urlsplit, urlunsplit
 import mistune
 
 WEBSITE_DIR = Path(__file__).resolve().parent
-REPO_ROOT = WEBSITE_DIR.parent
+REPO_ROOT = WEBSITE_DIR.parent.parent
 LISTS_DIR = REPO_ROOT / "lists"
 DEFAULT_SITE_URL = "https://pro-genai.github.io/awesome-checklists/"
 GITHUB_REPO = "https://github.com/Pro-GenAI/awesome-checklists"
@@ -58,6 +58,8 @@ def output_path(source: Path) -> Path:
     rel = source.relative_to(REPO_ROOT)
     if rel == Path("README.md"):
         return Path("index.html")
+    if len(rel.parts) == 2 and rel.parts[0] == "docs" and rel.name in {"AUTHORSHIP.md", "AWESOME.md", "CHANGELOG.md", "CONTRIBUTING.md", "DEVELOPMENT.md"}:
+        return Path(rel.name).with_suffix(".html")
     if rel.parts[0] == "lists":
         # Preserve stable public URLs for relocated source and reference Markdown.
         if rel.as_posix() in {
@@ -121,10 +123,10 @@ class DocRenderer(mistune.HTMLRenderer):
         return f'<h{level} id="{esc(slug)}">{text}<a class="heading-anchor" href="#{esc(slug)}" aria-label="Link to {esc(clean)}">#</a></h{level}>\n'
 
     def image(self, text: str, url: str, title: str | None = None) -> str:
-        # The repository README uses website/assets/...; the published site
-        # copies website/assets/ to dist/assets/.
-        if self.page.source == REPO_ROOT / "README.md" and url.startswith("website/assets/"):
-            url = "assets/" + url.removeprefix("website/assets/")
+        # The repository README uses docs/website/assets/...; the published site
+        # copies docs/website/assets/ to dist/assets/.
+        if self.page.source == REPO_ROOT / "README.md" and url.startswith("docs/website/assets/"):
+            url = "assets/" + url.removeprefix("docs/website/assets/")
         return super().image(text, url, title)
 
     def link(self, text: str, url: str, title: str | None = None) -> str:
@@ -176,7 +178,7 @@ def is_resource(page: Page) -> bool:
     rel = page.source.relative_to(REPO_ROOT)
     if page.source.name in {"README.md", "AGENTS.md"} or is_checklist(page):
         return False
-    return len(rel.parts) == 1 or (
+    return len(rel.parts) == 1 or (len(rel.parts) == 2 and rel.parts[0] == "docs" and rel.name in {"AUTHORSHIP.md", "AWESOME.md", "CHANGELOG.md", "CONTRIBUTING.md", "DEVELOPMENT.md"}) or (
         len(rel.parts) >= 3 and rel.parts[0] == "lists" and
         (rel.parts[1] == "references" or rel.parts[-2] == "references")
     )
@@ -320,7 +322,7 @@ def build(output_dir: Path, base: str) -> int:
     protected = (WEBSITE_DIR / "assets", WEBSITE_DIR / ".venv", WEBSITE_DIR / "__pycache__")
     if (output_dir == WEBSITE_DIR or not output_dir.is_relative_to(WEBSITE_DIR)
             or any(output_dir == directory or directory.is_relative_to(output_dir) for directory in protected)):
-        raise ValueError("Output directory must be a subdirectory of website/ (not website/ itself)")
+        raise ValueError("Output directory must be a subdirectory of docs/website/ (not docs/website/ itself)")
     if output_dir.exists():
         shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True)
@@ -358,7 +360,7 @@ def build(output_dir: Path, base: str) -> int:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate a static HTML site from all repository Markdown files")
-    parser.add_argument("--output", type=Path, default=WEBSITE_DIR / "dist", help="output directory inside website/")
+    parser.add_argument("--output", type=Path, default=WEBSITE_DIR / "dist", help="output directory inside docs/website/")
     parser.add_argument("--site-url", default=os.getenv("SITE_URL", DEFAULT_SITE_URL), help="public base URL for sitemap/canonical links")
     args = parser.parse_args()
     parsed = urlsplit(args.site_url)

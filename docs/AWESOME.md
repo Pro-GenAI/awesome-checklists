@@ -32,4 +32,4 @@ A focused, curated entry point to evidence-based checklists for production Gener
 
 - [Production readiness review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/checklists/production-readiness.md) - Check cold starts, secrets, rate limits, dependency patching and provider throttling before a rollout.
 
-For the complete 91-file library, evidence requirements and review toolchain, see the [main documentation](README.md). Apply each list to your own threat model and retain project-specific evidence.
+For the complete 91-file library, evidence requirements and review toolchain, see the [main documentation](../README.md). Apply each list to your own threat model and retain project-specific evidence.
