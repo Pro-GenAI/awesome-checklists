@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://pro-genai.github.io/awesome-checklists/sitemap.xml
