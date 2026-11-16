@@ -1,0 +1,65 @@
+name: Checklist source lint
+
+# Deliberately independent of disabled website.yml.disabled.
+# Validate pull requests as well as direct main commits; PRs are optional.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  source-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate IDs, required sections and internal Markdown anchors
+        run: python skills/awesome-checklists/scripts/lint_repository.py
+      - name: Validate cross-scope AGENT IDs and section links
+        run: python skills/awesome-checklists/scripts/validate_domain_structure.py
+      - name: Verify auto-generated inventory and README headline
+        run: python skills/awesome-checklists/scripts/generate_inventory.py --check
+      - name: Check stable ID prefix ranges and owning files
+        run: python skills/awesome-checklists/scripts/generate_id_prefixes.py --check
+      - name: Validate source review dates and flag stale references
+        run: python skills/awesome-checklists/scripts/check_source_freshness.py --max-age-days 180
+      - name: Enforce 180-day source review cadence on scheduled/manual checks
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: python skills/awesome-checklists/scripts/check_source_freshness.py --max-age-days 180 --fail-stale
+      - name: Verify release metadata, public visibility and pinned-source policy
+        env:
+          GITHUB_IS_PRIVATE: ${{ github.event.repository.private }}
+        run: python skills/awesome-checklists/scripts/validate_release_metadata.py
+      - name: Run offline helper and inventory tests
+        run: python -m unittest discover -s skills/awesome-checklists/tests -v
+      - name: Validate Core 50 and JSON export
+        run: python skills/awesome-checklists/scripts/export_checklists.py --only-core --output "$RUNNER_TEMP/core-checklists.json"
+      - name: Generate bounded UNKNOWN-first starter review
+        run: python skills/awesome-checklists/scripts/generate_review.py --profile startup --size 50 --output "$RUNNER_TEMP/scoped-starter.md"
+      - name: Audit external links (advisory, scheduled/manual only)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          python skills/awesome-checklists/scripts/lint_repository.py --external --external-limit 120 2>&1 | tee "$RUNNER_TEMP/external-link-audit.txt"
+      - name: Preserve external link audit evidence
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-link-audit-${{ github.run_id }}
+          path: ${{ runner.temp }}/external-link-audit.txt
+          if-no-files-found: warn
+          retention-days: 30

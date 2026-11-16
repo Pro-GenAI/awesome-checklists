@@ -1,0 +1,30 @@
+# Optional compliance and security-framework crosswalk
+
+**Scope:** pointers to source topics that reviewers may need to evaluate against external frameworks. **Last researched:** 2026-11-15. This is an **illustrative subject-matter crosswalk, not a verified control-to-clause or conformance mapping**. A checklist ID is not an ASVS requirement ID, and a `P0`/`P1`/`P2` label is **not** an ASVS L1/L2/L3 level or a legal obligation. The crosswalk is **optional** for every checklist file: use it only after choosing the product's deployment jurisdictions, regulated functions, data categories and assurance targets.
+
+| Topic | Illustrative source checklist IDs / domains | Frameworks and clauses to investigate (not claimed equivalence) |
+| --- | --- | --- |
+| User authentication and privileged access | `SEC-006`, `SEC-102`, `SEC-103`, `SEC-007`, `SEC-009`, `SEC-110`–`SEC-112`, `AGENT-027` | **OWASP ASVS 5.0** authentication, session and authorization controls at an **explicitly selected** L1, L2 or L3; **GDPR** Art. 32 when protecting personal data; **SOC 2** Security TSC (AICPA-controlled source). |
+| Privacy-by-design, minimization, retention | `SEC-023`, `SEC-024`, `DATA-015`, `DATA-016`, shared Legal and AI Governance domains | **GDPR** Arts. 5, 6, 25 and 30 where applicable; **India DPDP Act 2023** and **Rules 2025** notice, processing, retention and rights provisions **only as they come into force**; SOC 2 Privacy and Confidentiality criteria when selected. |
+| Incident handling and breach response | `SEC-031`, `SEC-032`, `SEC-054`, `LAUNCH-052`, `LAUNCH-056` | **GDPR** Arts. 32–34 (breach-response duties depend on the incident and controller role); India DPDP applicable security and breach provisions, **subject to staged commencement**; SOC 2 Security/Availability categories. |
+| Software testing, secure design and releases | `SEC-017`, `SEC-104` through `SEC-109`, `TST-031`, `SEC-016` | **ASVS 5.0** application security verification at the project's chosen level; **SOC 2** Security/Processing Integrity as scoped by the independent auditor. |
+| AI-specific systems and third-party data | `AIG-005`, `AIG-025`, `RAG-053`, `AGENT-075`, `AGENT-077` | Determine whether personal-data processing invokes **GDPR** obligations (including potential Art. 35 DPIA) or relevant **India DPDP** provisions. These laws and SOC 2 are **not** blanket AI-model approvals. |
+
+### AI Act source currency
+
+For potentially regulated AI applications, also review the [AI framework watch](ai-source-watch.md) and the [European Commission's current EU AI Act overview](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai). The 2026 amendments revise application dates for certain high-risk categories; a checklist priority does not determine AI Act risk status.
+
+### Detailed control-level starter mapping
+
+The [control-level crosswalk](control-crosswalk.md) and [JSON mappings](control-crosswalk.json) now include **22 specific, primary-source-confirmed external identifiers** covering OWASP ASVS 5.0.0, NIST CSF 2.0, ISO/IEC 27002:2022 and AICPA SOC 2 TSC. The mapping **relationships remain proposed partial alignments** and must be reviewed against exact external requirements, their applicability, and real project evidence. The topical jurisdiction references below remain separate from this technical-control starter map.
+
+### Official starting sources and applicability
+
+- **OWASP ASVS 5.0:** [official repository and release](https://github.com/OWASP/ASVS) and [verification levels](https://github.com/OWASP/ASVS/blob/master/5.0/en/0x03-What-is-the-ASVS.md). ASVS has **L1, L2 and L3**. Select the level using the application and assurance context, then map each selected actual ASVS requirement identifier to tested evidence. Do not infer any level from an `SEC` checklist ID or a P tier.
+- **EU GDPR:** [Regulation (EU) 2016/679 — official consolidated text](https://eur-lex.europa.eu/eli/reg/2016/679). Applicability, controller/processor allocation, legal bases, exceptions, national rules and transfers need independent assessment. Topic suggestions above are not an article-by-article audit.
+- **India DPDP Act/Rules:** [MeitY official Rules 2025 resource](https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa?pageTitle=Digital-Personal-Data-Protection-Rules-2025%3B) including the enforcement timeline and corrigendum; [13 November 2025 commencement notification, G.S.R. 843(E)](https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf). **Staggered commencement** is material: specified sections began upon Gazette publication; certain obligations were scheduled for one year later and most substantive provisions for eighteen months later. Do **not** treat every provision as already effective on the review date. Check updated notifications, case law and implementation guidance before asserting an obligation.
+- **SOC 2:** [AICPA SOC 2 description-criteria resource](https://www.aicpa-cima.com/resources/download/get-description-criteria-for-your-organizations-soc-2-r-report). A SOC 2 examination is performed by qualified auditors against the applicable AICPA Trust Services Criteria for Security and chosen additional categories (Availability, Processing Integrity, Confidentiality, Privacy); a checklist does not produce an audit opinion.
+
+### How to extend this crosswalk responsibly
+
+For each target deployment, create a **project-specific** mapping table with `internal_id`, `external_framework`, `exact_framework_version`, `article_or_control_id`, `applicable_scope`, `effective_date`, `test_evidence`, `reviewer`, `result`, `gaps`, and `signoff`. Label every candidate mapping `proposed` until a qualified subject-matter reviewer verifies the actual primary clause and its applicability. Avoid claiming legal compliance or certification from checklist presence or check completion. For unregulated functionality, explain `N/A` instead of filling in fabricated external control IDs.

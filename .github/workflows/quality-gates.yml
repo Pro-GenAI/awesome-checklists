@@ -1,0 +1,43 @@
+name: Curation and lifecycle quality gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lifecycle-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify drop-in list / JSON / canonical ID parity
+        run: python3 scripts/validate_lifecycle_catalog.py
+      - name: Validate existing source inventory and links
+        run: python3 skills/awesome-checklists/scripts/lint_repository.py
+      - name: Verify inventory and source ID ownership
+        run: |
+          python3 skills/awesome-checklists/scripts/generate_inventory.py --check
+          python3 skills/awesome-checklists/scripts/generate_id_prefixes.py --check
+      - name: Run repository unit tests
+        run: python3 -m unittest discover -s skills/awesome-checklists/tests -v
+
+  awesome-lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Lint Awesome list conventions
+        run: npx --yes awesome-lint AWESOME.md

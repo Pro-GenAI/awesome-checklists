@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "description": "Illustrative risk-based starting set, not a certification, exhaustive inventory, or universal priority assignment. Source checklist text remains authoritative.",
+  "priority_definitions": {
+    "P0": "Potential release blocker when applicable and unmitigated; human approval required for exceptions.",
+    "P1": "Important verification; investigate gaps and track resolution or approved exceptions.",
+    "P2": "Supporting assurance or context; apply when risk and architecture warrant it."
+  },
+  "checks": [
+    {
+      "scope": "shared",
+      "source": "lists/05_Security.md",
+      "id": "SEC-001",
+      "priority": "P2",
+      "criterion": "Assets, sensitive data, trust boundaries, external dependencies, and data flows are inventoried."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/05_Security.md",
+      "id": "SEC-002",
+      "priority": "P1",
+      "criterion": "A threat model covers realistic attacker goals, entry points, misuse cases, and mitigation owners."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/05_Security.md",
+      "id": "SEC-008",
+      "priority": "P0",
+      "criterion": "Least privilege, role separation, service-account scopes, and periodic access reviews are applied."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/05_Security.md",
+      "id": "SEC-012",
+      "priority": "P0",
+      "criterion": "Validate untrusted inputs against explicit server-side contracts at applicable trust boundaries."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/05_Security.md",
+      "id": "SEC-020",
+      "priority": "P0",
+      "criterion": "Secrets are centrally managed, rotated when necessary, and scoped to their purpose."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/05_Security.md",
+      "id": "SEC-024",
+      "priority": "P1",
+      "criterion": "Logs, traces, analytics, and error reports exclude secrets and unnecessary personal data."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/08_Testing.md",
+      "id": "TST-002",
+      "priority": "P1",
+      "criterion": "Critical user journeys, business rules, edge cases, and negative cases are identified and prioritized by risk."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/08_Testing.md",
+      "id": "TST-018",
+      "priority": "P1",
+      "criterion": "Critical journeys are retested after fixes; regression suites pass."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/08_Testing.md",
+      "id": "TST-031",
+      "priority": "P0",
+      "criterion": "Known defects are triaged by severity; no unaccepted release-blocking defect remains."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/14_Release_and_LaunchReadiness.md",
+      "id": "LAUNCH-010",
+      "priority": "P2",
+      "criterion": "Maintain a single release plan linking the source revision, immutable artifact, change summary, owners, milestones, and evidence locations."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/14_Release_and_LaunchReadiness.md",
+      "id": "LAUNCH-052",
+      "priority": "P1",
+      "criterion": "Set measurable thresholds for error rates, latency, availability, transaction failures, and business guardrails that halt rollout."
+    },
+    {
+      "scope": "shared",
+      "source": "lists/14_Release_and_LaunchReadiness.md",
+      "id": "LAUNCH-056",
+      "priority": "P1",
+      "criterion": "Document tested rollback, traffic reversal, feature-disablement, and forward-fix options appropriate to the changed components."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/05_Accessibility.md",
+      "id": "A11Y-002",
+      "priority": "P2",
+      "criterion": "Identify the applicable accessibility standards, legal/contractual obligations, and target conformance level with qualified reviewers when needed."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/05_Accessibility.md",
+      "id": "A11Y-023",
+      "priority": "P1",
+      "criterion": "Verify tab order follows the intended interaction and does not produce confusing jumps or inaccessible controls."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/05_Accessibility.md",
+      "id": "A11Y-063",
+      "priority": "P1",
+      "criterion": "Evaluate critical journeys with screen readers and supported browser/operating-system combinations."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/05_Accessibility.md",
+      "id": "A11Y-067",
+      "priority": "P0",
+      "criterion": "Test forms for programmatic labels, descriptions, required fields, error association, and recovery after failed submission."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/05_Accessibility.md",
+      "id": "A11Y-094",
+      "priority": "P0",
+      "criterion": "Ensure keyboard-only users can operate all essential functions without focus traps or undiscoverable commands."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/05_Accessibility.md",
+      "id": "A11Y-100",
+      "priority": "P2",
+      "criterion": "Announce asynchronous status changes through appropriate live regions or other accessible notification patterns without over-announcing."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/05_Accessibility.md",
+      "id": "A11Y-103",
+      "priority": "P1",
+      "criterion": "Ensure pointer targets, drag interactions, gestures, and hover/focus revealed content have accessible alternatives where required."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/04_UI_UX_and_Usability.md",
+      "id": "UX-032",
+      "priority": "P0",
+      "criterion": "Check that destructive, privileged, or irreversible actions are not confused with routine navigation."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/04_UI_UX_and_Usability.md",
+      "id": "UX-041",
+      "priority": "P2",
+      "criterion": "Show loading, empty, offline, unavailable, and error states that explain the condition and next step."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/04_UI_UX_and_Usability.md",
+      "id": "UX-044",
+      "priority": "P1",
+      "criterion": "Use undo, edit, cancel, or confirmation patterns proportionate to the impact and reversibility of an action."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/04_UI_UX_and_Usability.md",
+      "id": "UX-090",
+      "priority": "P1",
+      "criterion": "Check that client and server validation disagree neither silently nor through contradictory user messages."
+    },
+    {
+      "scope": "frontend",
+      "source": "lists/frontend/09_Security.md",
+      "id": "SEC-076",
+      "priority": "P0",
+      "criterion": "Check CSRF protection for cookie-authenticated state-changing actions and other applicable request forgery risks."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/09_Security.md",
+      "id": "SEC-007",
+      "priority": "P0",
+      "criterion": "Authorization is enforced server-side on every protected object, action, and tenant boundary."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/09_Security.md",
+      "id": "SEC-019",
+      "priority": "P0",
+      "criterion": "Scan current source, available Git history/branches, build artifacts, and logs for passwords, API keys, private keys, or tokens; revoke or rotate confirmed exposures and assess impact instead of assuming removal from the latest commit resolves a leak."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/09_Security.md",
+      "id": "SEC-045",
+      "priority": "P0",
+      "criterion": "Test tenant isolation at query, storage, cache, and API response boundaries."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/09_Security.md",
+      "id": "SEC-058",
+      "priority": "P0",
+      "criterion": "Perform object-level authorization tests for manipulated IDs on every read, write, and delete endpoint (OWASP API1)."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/09_Security.md",
+      "id": "SEC-059",
+      "priority": "P0",
+      "criterion": "Test authentication token issuance, expiry, audience/issuer, signature validation, revocation, and replay resistance where relevant."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/09_Security.md",
+      "id": "SEC-062",
+      "priority": "P1",
+      "criterion": "Enforce and test resource limits: rate, page size, payload size, timeouts, concurrency, and costly downstream calls (API4)."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/09_Security.md",
+      "id": "SEC-064",
+      "priority": "P1",
+      "criterion": "Test SSRF controls for URL-fetching endpoints and all outbound destinations (API7)."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/07_API_Design_and_Integrations.md",
+      "id": "APID-005",
+      "priority": "P2",
+      "criterion": "Validate implemented methods, routes, events, and message types against the published contract."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/07_API_Design_and_Integrations.md",
+      "id": "APID-079",
+      "priority": "P0",
+      "criterion": "Test object-, function-, and property-level authorization, including tenant isolation."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/07_API_Design_and_Integrations.md",
+      "id": "APID-082",
+      "priority": "P1",
+      "criterion": "Test repeated mutations and concurrent requests for idempotency and data integrity."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/08_Data_and_DatabaseManagement.md",
+      "id": "DATA-023",
+      "priority": "P2",
+      "criterion": "Test migrations against representative data volumes, versions, constraints, indexes, and realistic schema history."
+    },
+    {
+      "scope": "backend",
+      "source": "lists/backend/08_Data_and_DatabaseManagement.md",
+      "id": "DATA-148",
+      "priority": "P1",
+      "criterion": "Demonstrate point-in-time recovery to a selected timestamp or log position using a valid base backup and complete incremental/log chain; reconcile recovered business records with the agreed recovery objective."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "id": "AGENT-027",
+      "priority": "P0",
+      "criterion": "Enforce object-, tenant-, account-, and operation-level authorization in the tool implementation regardless of the model's instructions."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "id": "AGENT-034",
+      "priority": "P1",
+      "criterion": "Test prompt injection that tries to call higher-privilege tools, reveal secrets, or redirect the original user goal."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "id": "AGENT-048",
+      "priority": "P1",
+      "criterion": "Do not treat tool descriptions, system prompts, output filters, or human-friendly warnings as substitutes for enforceable access controls."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "id": "AGENT-058",
+      "priority": "P2",
+      "criterion": "Ensure cancellation propagates to pending model calls, queued tool work, child agents, and other resources where feasible."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "id": "AGENT-064",
+      "priority": "P0",
+      "criterion": "Use operation identifiers and deduplication when retries or resumed workflows could replay non-idempotent tool calls."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "id": "AGENT-075",
+      "priority": "P0",
+      "criterion": "Bind each approval to a specific run, pending tool call, immutable argument set, and authorized decision maker."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "id": "AGENT-077",
+      "priority": "P0",
+      "criterion": "Revalidate current permissions and action arguments immediately before executing a previously approved tool call."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "id": "AGENT-089",
+      "priority": "P0",
+      "criterion": "Provide a tested emergency stop that disables agent execution and revokes tools or credentials as appropriate."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/10_RAG_and_Knowledge_Bases.md",
+      "id": "RAG-053",
+      "priority": "P0",
+      "criterion": "Test retrieval isolation against users with similar queries but different document permissions."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/10_RAG_and_Knowledge_Bases.md",
+      "id": "RAG-065",
+      "priority": "P0",
+      "criterion": "Use controlled adversarial cases to verify malicious document text cannot change search permissions or trigger external actions."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/03_AI_Evaluation_and_Governance.md",
+      "id": "AIG-005",
+      "priority": "P1",
+      "criterion": "Classify the system by potential impact and likelihood of harm using a documented, project-appropriate risk methodology."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/03_AI_Evaluation_and_Governance.md",
+      "id": "AIG-025",
+      "priority": "P0",
+      "criterion": "Set explicit acceptance thresholds, review rules, and responsible approvers for high-impact outcomes."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/16_AI_Red_Teaming_and_Guardrails.md",
+      "id": "RED-057",
+      "priority": "P0",
+      "criterion": "Enforce user, tenant, role, scope, resource, and destination permissions in trusted execution code for every consequential tool call."
+    },
+    {
+      "scope": "AI",
+      "source": "lists/AI/16_AI_Red_Teaming_and_Guardrails.md",
+      "id": "RED-089",
+      "priority": "P2",
+      "criterion": "Record significant findings with owners, severity, mitigation, user impact, and validated retest evidence in project-specific records."
+    }
+  ]
+}
