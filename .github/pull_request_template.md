@@ -14,7 +14,7 @@ Describe which checklist IDs, lifecycle phase or curated resources change and wh
 - [ ] The entry is actionable, non-promotional, and relevant to production GenAI, agent safety or adjacent software review.
 - [ ] Each link works, is maintained, and includes a specific one-sentence rationale.
 - [ ] No source ID is renumbered, silently repurposed or duplicated.
-- [ ] Shortlist Markdown and `checklists/catalog.json` agree (when changed).
+- [ ] Shortlist Markdown and `docs/checklists/catalog.json` agree (when changed).
 - [ ] I ran `python3 scripts/validate_lifecycle_catalog.py` for shortlist changes (or explain why not).
 - [ ] I ran the relevant commands in `docs/CONTRIBUTING.md` (or explain why not).
 - [ ] I did **not** mark review checkboxes PASS without target-specific evidence.

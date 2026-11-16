@@ -13,14 +13,14 @@ CHECK = re.compile(r"^- \[ \] \*\*([A-Z][A-Z0-9]*-\d{3})\*\* — ", re.M)
 
 def validate(root: Path) -> list[str]:
     problems: list[str] = []
-    data = json.loads((root / "checklists/catalog.json").read_text(encoding="utf-8"))
+    data = json.loads((root / "docs/checklists/catalog.json").read_text(encoding="utf-8"))
     if data.get("schema_version") != 1:
         problems.append("Unexpected catalog schema_version")
     seen: set[str] = set()
     for group in data["checklists"]:
         slug = group["slug"]
         stage = group["stage"]
-        path = root / "checklists" / (slug + ".md")
+        path = root / "docs/checklists" / (slug + ".md")
         markdown = path.read_text(encoding="utf-8")
         ids = []
         for item in group["items"]:
@@ -41,7 +41,7 @@ def validate(root: Path) -> list[str]:
                 problems.append(item_id + ": missing canonical source")
             elif f"**{item_id}** `{item['priority_hint']}`" not in source.read_text(encoding="utf-8"):
                 problems.append(item_id + ": source ID/priority does not match")
-            expected = f"- [ ] **{item_id}** — {item['label']}. [Canonical check](../{item['source']}). *Why:* {item['why']}."
+            expected = f"- [ ] **{item_id}** — {item['label']}. [Canonical check](../../{item['source']}). *Why:* {item['why']}."
             if expected not in markdown:
                 problems.append(item_id + ": Markdown/JSON description mismatch")
         if stage not in ("design-and-implementation", "data-and-retrieval", "agent-runtime", "verification-and-operations", "release"):

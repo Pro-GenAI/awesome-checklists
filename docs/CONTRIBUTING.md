@@ -58,7 +58,7 @@ The historical [source lint](../.github/workflows/checklist-lint.yml.disabled) a
 
 Prefer a small number of maintained, directly actionable entries over link volume. A proposed resource must explain **what production failure it prevents**, **when to use it**, its owner/source, and evidence that it is maintained. Exclude bare link dumps, self-promotion without implementation detail, duplicated generic web-dev lists, archived or abandoned sources, and unverifiable compliance claims. Use consistent category tags such as `[PR Template]`, `[Eval Benchmark]`, `[Security Audit]` or `[Runtime Guardrail]`.
 
-The five [drop-in templates](../checklists/README.md) are shortlist views of stable IDs, not new canonical checklist IDs. Edit Markdown and [catalog.json](../checklists/catalog.json) together, keep review status UNKNOWN until evidence is provided, and run:
+The five [drop-in templates](checklists/README.md) are shortlist views of stable IDs, not new canonical checklist IDs. Edit Markdown and [catalog.json](checklists/catalog.json) together, keep review status UNKNOWN until evidence is provided, and run:
 
 ```bash
 python3 scripts/validate_lifecycle_catalog.py

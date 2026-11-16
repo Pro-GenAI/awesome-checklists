@@ -14,22 +14,22 @@ A focused, curated entry point to evidence-based checklists for production Gener
 
 ## Prompt and Context Engineering
 
-- [Prompt and context review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/checklists/prompt-context.md) - Check instruction boundaries, strict output contracts, context budgeting and prompt-injection regressions before a new prompt release.
+- [Prompt and context review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/docs/checklists/prompt-context.md) - Check instruction boundaries, strict output contracts, context budgeting and prompt-injection regressions before a new prompt release.
 
 ## RAG and Data Pipelines
 
-- [RAG and data review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/checklists/rag-data.md) - Validate document chunking, embedding compatibility, retrieval judgments, index migrations and deletion propagation before serving new corpora.
+- [RAG and data review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/docs/checklists/rag-data.md) - Validate document chunking, embedding compatibility, retrieval judgments, index migrations and deletion propagation before serving new corpora.
 
 ## Agent Safety and Runtime Guardrails
 
-- [Agent safety review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/checklists/agent-safety.md) - Test least-privilege tool access, permission enforcement, injection resistance, handoff traces and streamed action safety.
+- [Agent safety review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/docs/checklists/agent-safety.md) - Test least-privilege tool access, permission enforcement, injection resistance, handoff traces and streamed action safety.
 
 ## Evaluation and Observability
 
-- [Evaluation and observability review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/checklists/evaluation-observability.md) - Track versioned golden cases, deterministic assertions, retrieval relevance, user-facing latency and model usage costs.
+- [Evaluation and observability review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/docs/checklists/evaluation-observability.md) - Track versioned golden cases, deterministic assertions, retrieval relevance, user-facing latency and model usage costs.
 
 ## Production Readiness
 
-- [Production readiness review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/checklists/production-readiness.md) - Check cold starts, secrets, rate limits, dependency patching and provider throttling before a rollout.
+- [Production readiness review](https://github.com/Pro-GenAI/awesome-checklists/blob/main/docs/checklists/production-readiness.md) - Check cold starts, secrets, rate limits, dependency patching and provider throttling before a rollout.
 
 For the complete 91-file library, evidence requirements and review toolchain, see the [main documentation](../README.md). Apply each list to your own threat model and retain project-specific evidence.

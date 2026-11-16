@@ -46,6 +46,7 @@ def markdown_files(root: Path) -> list[Path]:
     files = checklist_files(root)
     files.extend(sorted((root / "lists" / "references").glob("*.md")))
     files.extend(sorted((root / "lists" / "frontend" / "references").glob("*.md")))
+    files.extend(sorted((root / "docs" / "checklists").glob("*.md")))
     for relative in (
         "README.md",
         "AGENTS.md",

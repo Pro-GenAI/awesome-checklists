@@ -60,6 +60,9 @@ def output_path(source: Path) -> Path:
         return Path("index.html")
     if len(rel.parts) == 2 and rel.parts[0] == "docs" and rel.name in {"AUTHORSHIP.md", "AWESOME.md", "CHANGELOG.md", "CONTRIBUTING.md", "DEVELOPMENT.md"}:
         return Path(rel.name).with_suffix(".html")
+    if rel.parts[:2] == ("docs", "checklists"):
+        # Preserve published URLs when the drop-in Markdown sources move.
+        return Path(*rel.parts[1:]).with_suffix(".html")
     if rel.parts[0] == "lists":
         # Preserve stable public URLs for relocated source and reference Markdown.
         if rel.as_posix() in {

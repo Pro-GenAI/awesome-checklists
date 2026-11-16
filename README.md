@@ -25,27 +25,27 @@ Great products are rarely derailed by one spectacular mistake. More often, the p
 
 ## Production GenAI lifecycle
 
-These phase-oriented [drop-in PR/issue templates](checklists/README.md) complement, rather than replace, the existing 91 numbered source checklists. Each item links to its canonical stable ID and explains the failure mode it helps detect. `[PR Template]`, `[Security Audit]`, `[Eval Benchmark]`, and `[Runtime Guardrail]` are editorial navigation tags, not certifications or claims that a check was run.
+These phase-oriented [drop-in PR/issue templates](docs/checklists/README.md) complement, rather than replace, the existing 91 numbered source checklists. Each item links to its canonical stable ID and explains the failure mode it helps detect. `[PR Template]`, `[Security Audit]`, `[Eval Benchmark]`, and `[Runtime Guardrail]` are editorial navigation tags, not certifications or claims that a check was run.
 
 ### Prompt & Context Engineering
 
-`[PR Template]` [Prompt and context checklist](checklists/prompt-context.md) — verify trust boundaries, strict output schemas, context-token budgets, truncation and injection resistance before a prompt or tool schema change. Source: [Prompt engineering and versioning](lists/AI/09_Prompt_Engineering_and_Versioning.md).
+`[PR Template]` [Prompt and context checklist](docs/checklists/prompt-context.md) — verify trust boundaries, strict output schemas, context-token budgets, truncation and injection resistance before a prompt or tool schema change. Source: [Prompt engineering and versioning](lists/AI/09_Prompt_Engineering_and_Versioning.md).
 
 ### RAG & Data Pipelines
 
-`[Eval Benchmark]` [RAG and data checklist](checklists/rag-data.md) — prevent broken document chunking, incompatible embeddings, partial index swaps, unmeasured retrieval loss and stale/deleted vector data. Sources: [RAG and knowledge bases](lists/AI/10_RAG_and_Knowledge_Bases.md) and [AI evaluation](lists/AI/15_AI_Evaluation_and_Regression.md).
+`[Eval Benchmark]` [RAG and data checklist](docs/checklists/rag-data.md) — prevent broken document chunking, incompatible embeddings, partial index swaps, unmeasured retrieval loss and stale/deleted vector data. Sources: [RAG and knowledge bases](lists/AI/10_RAG_and_Knowledge_Bases.md) and [AI evaluation](lists/AI/15_AI_Evaluation_and_Regression.md).
 
 ### Agent Safety & Runtime Guardrails
 
-`[Runtime Guardrail]` [Agent safety checklist](checklists/agent-safety.md) — validate tool registry membership, operation-level permissions, prompt-injection defenses, handoff traces and partial-stream action boundaries. Sources: [Tool orchestration](lists/AI/11_AI_Agents_and_Tool_Orchestration.md), [red-teaming](lists/AI/16_AI_Red_Teaming_and_Guardrails.md) and [streaming inference](lists/AI/12_AI_Inference_and_Serving.md).
+`[Runtime Guardrail]` [Agent safety checklist](docs/checklists/agent-safety.md) — validate tool registry membership, operation-level permissions, prompt-injection defenses, handoff traces and partial-stream action boundaries. Sources: [Tool orchestration](lists/AI/11_AI_Agents_and_Tool_Orchestration.md), [red-teaming](lists/AI/16_AI_Red_Teaming_and_Guardrails.md) and [streaming inference](lists/AI/12_AI_Inference_and_Serving.md).
 
 ### Evaluation & Observability
 
-`[Eval Benchmark]` [Evaluation and observability checklist](checklists/evaluation-observability.md) — catch regressions by keeping golden cases, schema and tool assertions, retrieval quality, user-visible latency and usage costs separate. Sources: [Evaluation and regression](lists/AI/15_AI_Evaluation_and_Regression.md) and [AI monitoring and drift](lists/AI/18_AI_Monitoring_and_Drift.md).
+`[Eval Benchmark]` [Evaluation and observability checklist](docs/checklists/evaluation-observability.md) — catch regressions by keeping golden cases, schema and tool assertions, retrieval quality, user-visible latency and usage costs separate. Sources: [Evaluation and regression](lists/AI/15_AI_Evaluation_and_Regression.md) and [AI monitoring and drift](lists/AI/18_AI_Monitoring_and_Drift.md).
 
 ### Production Readiness
 
-`[Security Audit]` [Production readiness checklist](checklists/production-readiness.md) — verify cold-start behavior, secrets scanning, quotas, dependency/container patching and rate-limit recovery before promoting a release. Sources: [Backend operations](lists/backend/30_DevOps_and_CI_CD.md), [performance](lists/backend/27_Performance_and_Scalability.md) and [inference serving](lists/AI/12_AI_Inference_and_Serving.md).
+`[Security Audit]` [Production readiness checklist](docs/checklists/production-readiness.md) — verify cold-start behavior, secrets scanning, quotas, dependency/container patching and rate-limit recovery before promoting a release. Sources: [Backend operations](lists/backend/30_DevOps_and_CI_CD.md), [performance](lists/backend/27_Performance_and_Scalability.md) and [inference serving](lists/AI/12_AI_Inference_and_Serving.md).
 
 For Pro-GenAI implementation examples and where to apply these checks, see [development companions](docs/DEVELOPMENT.md#pro-genai-implementation-companions).
 
