@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "method": "Computed from numbered checklist stable IDs across all four scopes; noncontiguous ranges may be intentional",
+  "total_ids": 4215,
+  "total_prefixes": 35,
+  "prefixes": {
+    "A11Y": {
+      "count": 112,
+      "first": "A11Y-001",
+      "last": "A11Y-112",
+      "ranges": [
+        [
+          1,
+          112
+        ]
+      ],
+      "source_files": [
+        "lists/backend/05_Accessibility.md",
+        "lists/frontend/05_Accessibility.md"
+      ]
+    },
+    "AGENT": {
+      "count": 141,
+      "first": "AGENT-001",
+      "last": "AGENT-141",
+      "ranges": [
+        [
+          1,
+          141
+        ]
+      ],
+      "source_files": [
+        "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+        "lists/backend/17_AI_Agents_and_Tool_Orchestration.md"
+      ]
+    },
+    "AIG": {
+      "count": 130,
+      "first": "AIG-001",
+      "last": "AIG-130",
+      "ranges": [
+        [
+          1,
+          130
+        ]
+      ],
+      "source_files": [
+        "lists/AI/03_AI_Evaluation_and_Governance.md",
+        "lists/backend/10_AI_Evaluation_and_Governance.md"
+      ]
+    },
+    "ANL": {
+      "count": 146,
+      "first": "ANL-001",
+      "last": "ANL-146",
+      "ranges": [
+        [
+          1,
+          146
+        ]
+      ],
+      "source_files": [
+        "lists/13_Analytics_and_ProductMetrics.md",
+        "lists/AI/20_Analytics_and_ProductMetrics.md",
+        "lists/backend/33_Analytics_and_ProductMetrics.md",
+        "lists/frontend/18_Analytics_and_ProductMetrics.md"
+      ]
+    },
+    "APID": {
+      "count": 120,
+      "first": "APID-001",
+      "last": "APID-120",
+      "ranges": [
+        [
+          1,
+          120
+        ]
+      ],
+      "source_files": [
+        "lists/backend/07_API_Design_and_Integrations.md",
+        "lists/frontend/07_API_Design_and_Integrations.md"
+      ]
+    },
+    "ARC": {
+      "count": 96,
+      "first": "ARC-001",
+      "last": "ARC-096",
+      "ranges": [
+        [
+          1,
+          96
+        ]
+      ],
+      "source_files": [
+        "lists/03_Architecture_and_CodeQuality.md",
+        "lists/backend/03_Architecture_and_CodeQuality.md",
+        "lists/frontend/03_Architecture_and_CodeQuality.md"
+      ]
+    },
+    "CARDS": {
+      "count": 130,
+      "first": "CARDS-001",
+      "last": "CARDS-130",
+      "ranges": [
+        [
+          1,
+          130
+        ]
+      ],
+      "source_files": [
+        "lists/AI/07_AI_Model_and_Dataset_Cards.md",
+        "lists/backend/13_AI_Model_and_Dataset_Cards.md"
+      ]
+    },
+    "COST": {
+      "count": 128,
+      "first": "COST-001",
+      "last": "COST-128",
+      "ranges": [
+        [
+          1,
+          128
+        ]
+      ],
+      "source_files": [
+        "lists/06_Cost_and_FinOps.md",
+        "lists/AI/19_Cost_and_FinOps.md",
+        "lists/backend/34_Cost_and_FinOps.md",
+        "lists/frontend/19_Cost_and_FinOps.md"
+      ]
+    },
+    "CUR": {
+      "count": 132,
+      "first": "CUR-001",
+      "last": "CUR-132",
+      "ranges": [
+        [
+          1,
+          132
+        ]
+      ],
+      "source_files": [
+        "lists/AI/06_AI_Data_Curation_and_Labeling.md",
+        "lists/backend/12_AI_Data_Curation_and_Labeling.md"
+      ]
+    },
+    "DATA": {
+      "count": 158,
+      "first": "DATA-001",
+      "last": "DATA-158",
+      "ranges": [
+        [
+          1,
+          158
+        ]
+      ],
+      "source_files": [
+        "lists/backend/08_Data_and_DatabaseManagement.md",
+        "lists/frontend/08_Data_and_DatabaseManagement.md"
+      ]
+    },
+    "DOC": {
+      "count": 122,
+      "first": "DOC-001",
+      "last": "DOC-122",
+      "ranges": [
+        [
+          1,
+          122
+        ]
+      ],
+      "source_files": [
+        "lists/07_Documentation_and_DeveloperExperience.md",
+        "lists/backend/25_Documentation_and_DeveloperExperience.md",
+        "lists/frontend/10_Documentation_and_DeveloperExperience.md"
+      ]
+    },
+    "DRIFT": {
+      "count": 132,
+      "first": "DRIFT-001",
+      "last": "DRIFT-132",
+      "ranges": [
+        [
+          1,
+          132
+        ]
+      ],
+      "source_files": [
+        "lists/AI/18_AI_Monitoring_and_Drift.md",
+        "lists/backend/24_AI_Monitoring_and_Drift.md"
+      ]
+    },
+    "EVAL": {
+      "count": 136,
+      "first": "EVAL-001",
+      "last": "EVAL-136",
+      "ranges": [
+        [
+          1,
+          136
+        ]
+      ],
+      "source_files": [
+        "lists/AI/15_AI_Evaluation_and_Regression.md",
+        "lists/backend/21_AI_Evaluation_and_Regression.md"
+      ]
+    },
+    "GEO": {
+      "count": 81,
+      "first": "GEO-001",
+      "last": "GEO-081",
+      "ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "source_files": [
+        "lists/AI/21_GEO_and_AEO.md",
+        "lists/backend/29_GEO_and_AEO.md",
+        "lists/frontend/14_GEO_and_AEO.md"
+      ]
+    },
+    "HUMAN": {
+      "count": 132,
+      "first": "HUMAN-001",
+      "last": "HUMAN-132",
+      "ranges": [
+        [
+          1,
+          132
+        ]
+      ],
+      "source_files": [
+        "lists/AI/14_AI_Human_Review_and_Escalation.md",
+        "lists/backend/20_AI_Human_Review_and_Escalation.md"
+      ]
+    },
+    "I18N": {
+      "count": 122,
+      "first": "I18N-001",
+      "last": "I18N-122",
+      "ranges": [
+        [
+          1,
+          122
+        ]
+      ],
+      "source_files": [
+        "lists/04_Internationalization_and_Localization.md",
+        "lists/backend/06_Internationalization_and_Localization.md",
+        "lists/frontend/06_Internationalization_and_Localization.md"
+      ]
+    },
+    "LAUNCH": {
+      "count": 133,
+      "first": "LAUNCH-001",
+      "last": "LAUNCH-133",
+      "ranges": [
+        [
+          1,
+          133
+        ]
+      ],
+      "source_files": [
+        "lists/14_Release_and_LaunchReadiness.md",
+        "lists/AI/22_Release_and_LaunchReadiness.md",
+        "lists/backend/35_Release_and_LaunchReadiness.md",
+        "lists/frontend/20_Release_and_LaunchReadiness.md"
+      ]
+    },
+    "LEG": {
+      "count": 74,
+      "first": "LEG-001",
+      "last": "LEG-074",
+      "ranges": [
+        [
+          1,
+          74
+        ]
+      ],
+      "source_files": [
+        "lists/02_LegalIssues.md",
+        "lists/AI/02_LegalIssues.md",
+        "lists/backend/02_LegalIssues.md",
+        "lists/frontend/02_LegalIssues.md"
+      ]
+    },
+    "MLOPS": {
+      "count": 130,
+      "first": "MLOPS-001",
+      "last": "MLOPS-130",
+      "ranges": [
+        [
+          1,
+          130
+        ]
+      ],
+      "source_files": [
+        "lists/AI/17_MLOps_and_Model_Lifecycle.md",
+        "lists/backend/23_MLOps_and_Model_Lifecycle.md"
+      ]
+    },
+    "MODELS": {
+      "count": 134,
+      "first": "MODELS-001",
+      "last": "MODELS-134",
+      "ranges": [
+        [
+          1,
+          134
+        ]
+      ],
+      "source_files": [
+        "lists/AI/05_AI_Model_Selection_and_Benchmarking.md",
+        "lists/backend/11_AI_Model_Selection_and_Benchmarking.md"
+      ]
+    },
+    "MULTI": {
+      "count": 134,
+      "first": "MULTI-001",
+      "last": "MULTI-134",
+      "ranges": [
+        [
+          1,
+          134
+        ]
+      ],
+      "source_files": [
+        "lists/AI/13_Multimodal_AI_Quality.md",
+        "lists/backend/19_Multimodal_AI_Quality.md"
+      ]
+    },
+    "OBS": {
+      "count": 119,
+      "first": "OBS-001",
+      "last": "OBS-119",
+      "ranges": [
+        [
+          1,
+          119
+        ]
+      ],
+      "source_files": [
+        "lists/12_Monitoring_and_Observability.md",
+        "lists/backend/32_Monitoring_and_Observability.md",
+        "lists/frontend/17_Monitoring_and_Observability.md"
+      ]
+    },
+    "OPS": {
+      "count": 114,
+      "first": "OPS-001",
+      "last": "OPS-114",
+      "ranges": [
+        [
+          1,
+          114
+        ]
+      ],
+      "source_files": [
+        "lists/11_DevOps_and_CI_CD.md",
+        "lists/backend/30_DevOps_and_CI_CD.md",
+        "lists/frontend/15_DevOps_and_CI_CD.md"
+      ]
+    },
+    "PERF": {
+      "count": 106,
+      "first": "PERF-001",
+      "last": "PERF-106",
+      "ranges": [
+        [
+          1,
+          106
+        ]
+      ],
+      "source_files": [
+        "lists/09_Performance_and_Scalability.md",
+        "lists/backend/27_Performance_and_Scalability.md",
+        "lists/frontend/12_Performance_and_Scalability.md"
+      ]
+    },
+    "PROMPT": {
+      "count": 132,
+      "first": "PROMPT-001",
+      "last": "PROMPT-132",
+      "ranges": [
+        [
+          1,
+          132
+        ]
+      ],
+      "source_files": [
+        "lists/AI/09_Prompt_Engineering_and_Versioning.md",
+        "lists/backend/15_Prompt_Engineering_and_Versioning.md"
+      ]
+    },
+    "RAG": {
+      "count": 128,
+      "first": "RAG-001",
+      "last": "RAG-128",
+      "ranges": [
+        [
+          1,
+          128
+        ]
+      ],
+      "source_files": [
+        "lists/AI/10_RAG_and_Knowledge_Bases.md",
+        "lists/backend/16_RAG_and_Knowledge_Bases.md"
+      ]
+    },
+    "RED": {
+      "count": 136,
+      "first": "RED-001",
+      "last": "RED-136",
+      "ranges": [
+        [
+          1,
+          136
+        ]
+      ],
+      "source_files": [
+        "lists/AI/16_AI_Red_Teaming_and_Guardrails.md",
+        "lists/backend/22_AI_Red_Teaming_and_Guardrails.md"
+      ]
+    },
+    "REL": {
+      "count": 115,
+      "first": "REL-001",
+      "last": "REL-115",
+      "ranges": [
+        [
+          1,
+          115
+        ]
+      ],
+      "source_files": [
+        "lists/10_Reliability_and_DisasterRecovery.md",
+        "lists/backend/31_Reliability_and_DisasterRecovery.md",
+        "lists/frontend/16_Reliability_and_DisasterRecovery.md"
+      ]
+    },
+    "REQ": {
+      "count": 83,
+      "first": "REQ-001",
+      "last": "REQ-083",
+      "ranges": [
+        [
+          1,
+          83
+        ]
+      ],
+      "source_files": [
+        "lists/01_Requirements_and_Planning.md",
+        "lists/AI/01_Requirements_and_Planning.md",
+        "lists/backend/01_Requirements_and_Planning.md",
+        "lists/frontend/01_Requirements_and_Planning.md"
+      ]
+    },
+    "SEC": {
+      "count": 121,
+      "first": "SEC-001",
+      "last": "SEC-121",
+      "ranges": [
+        [
+          1,
+          121
+        ]
+      ],
+      "source_files": [
+        "lists/05_Security.md",
+        "lists/AI/04_Security.md",
+        "lists/backend/09_Security.md",
+        "lists/frontend/09_Security.md"
+      ]
+    },
+    "SEO": {
+      "count": 87,
+      "first": "SEO-001",
+      "last": "SEO-087",
+      "ranges": [
+        [
+          1,
+          87
+        ]
+      ],
+      "source_files": [
+        "lists/backend/28_SEO.md",
+        "lists/frontend/13_SEO.md"
+      ]
+    },
+    "SERVE": {
+      "count": 132,
+      "first": "SERVE-001",
+      "last": "SERVE-132",
+      "ranges": [
+        [
+          1,
+          132
+        ]
+      ],
+      "source_files": [
+        "lists/AI/12_AI_Inference_and_Serving.md",
+        "lists/backend/18_AI_Inference_and_Serving.md"
+      ]
+    },
+    "TRAIN": {
+      "count": 132,
+      "first": "TRAIN-001",
+      "last": "TRAIN-132",
+      "ranges": [
+        [
+          1,
+          132
+        ]
+      ],
+      "source_files": [
+        "lists/AI/08_AI_FineTuning_and_Training.md",
+        "lists/backend/14_AI_FineTuning_and_Training.md"
+      ]
+    },
+    "TST": {
+      "count": 84,
+      "first": "TST-001",
+      "last": "TST-084",
+      "ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "source_files": [
+        "lists/08_Testing.md",
+        "lists/backend/26_Testing.md",
+        "lists/frontend/11_Testing.md"
+      ]
+    },
+    "UX": {
+      "count": 103,
+      "first": "UX-001",
+      "last": "UX-103",
+      "ranges": [
+        [
+          1,
+          103
+        ]
+      ],
+      "source_files": [
+        "lists/backend/04_UI_UX_and_Usability.md",
+        "lists/frontend/04_UI_UX_and_Usability.md"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "method": "Computed from numbered source files and visible stable IDs; excludes references and gates",
+  "total_files": 91,
+  "total_checks": 4215,
+  "scopes": {
+    "shared": {
+      "files": 14,
+      "checks": 701
+    },
+    "frontend": {
+      "files": 20,
+      "checks": 684
+    },
+    "backend": {
+      "files": 35,
+      "checks": 1118
+    },
+    "AI": {
+      "files": 22,
+      "checks": 1712
+    }
+  }
+}
