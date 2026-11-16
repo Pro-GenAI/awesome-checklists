@@ -1,6 +1,6 @@
 # Historical ideas and maintenance backlog
 
-**Candidate ideas only** — not approved scope or requirements. Consult [AGENTS.md](../../AGENTS.md) and [CONTRIBUTING.md](../../CONTRIBUTING.md) before promoting any note to a checklist. This section preserves earlier suggestions; it does not confer permission to execute third-party tools or create new controls without evidence.
+**Candidate ideas only** — not approved scope or requirements. Consult [AGENTS.md](../../AGENTS.md) and [CONTRIBUTING.md](../CONTRIBUTING.md) before promoting any note to a checklist. This section preserves earlier suggestions; it does not confer permission to execute third-party tools or create new controls without evidence.
 
 ## Suggested future maintenance and expansion
 

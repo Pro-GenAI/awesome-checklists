@@ -53,12 +53,14 @@ def markdown_files(root: Path) -> list[Path]:
         "docs/agents/scope-inventory.md",
         "docs/agents/contributor-workflows.md",
         "docs/agents/maintenance-backlog.md",
-        "CHANGELOG.md",
-        "CONTRIBUTING.md",
-        "AUTHORSHIP.md",
+        "docs/CHANGELOG.md",
+        "docs/CONTRIBUTING.md",
+        "docs/AUTHORSHIP.md",
+        "docs/DEVELOPMENT.md",
+        "docs/AWESOME.md",
         "skills/awesome-checklists/SKILL.md",
         "skills/awesome-checklists/references/domain-selection.md",
-        "website/README.md",
+        "docs/website/README.md",
     ):
         file = root / relative
         if file.is_file():

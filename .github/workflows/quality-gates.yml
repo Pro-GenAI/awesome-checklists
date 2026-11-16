@@ -40,4 +40,4 @@ jobs:
         with:
           node-version: '22'
       - name: Lint Awesome list conventions
-        run: npx --yes awesome-lint AWESOME.md
+        run: npx --yes awesome-lint docs/AWESOME.md

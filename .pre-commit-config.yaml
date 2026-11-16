@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: awesome-lint
         name: Awesome list conventions
-        entry: npx --yes awesome-lint AWESOME.md
+        entry: npx --yes awesome-lint docs/AWESOME.md
         language: system
         pass_filenames: false
         files: ^(AWESOME|README)\.md$

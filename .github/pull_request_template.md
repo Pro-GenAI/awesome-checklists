@@ -16,7 +16,7 @@ Describe which checklist IDs, lifecycle phase or curated resources change and wh
 - [ ] No source ID is renumbered, silently repurposed or duplicated.
 - [ ] Shortlist Markdown and `checklists/catalog.json` agree (when changed).
 - [ ] I ran `python3 scripts/validate_lifecycle_catalog.py` for shortlist changes (or explain why not).
-- [ ] I ran the relevant commands in `CONTRIBUTING.md` (or explain why not).
+- [ ] I ran the relevant commands in `docs/CONTRIBUTING.md` (or explain why not).
 - [ ] I did **not** mark review checkboxes PASS without target-specific evidence.
 - [ ] I disclosed AI assistance, reference provenance and any human-validation gaps.
 

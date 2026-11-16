@@ -8,7 +8,7 @@
 - [Scope inventory and domain routing](docs/agents/scope-inventory.md): numbered file ownership, security and agent cross-scope IDs, domain responsibilities.
 - [Contributor and review workflow](docs/agents/contributor-workflows.md): adding checks, evidence, safe source ingestion, quality and release procedures.
 - [Ideas and maintenance backlog](docs/agents/maintenance-backlog.md): uncommitted candidates, optional tools and research questions.
-- [Public changelog](CHANGELOG.md) and [contribution policy](CONTRIBUTING.md): current changes and review expectations.
+- [Public changelog](docs/CHANGELOG.md) and [contribution policy](docs/CONTRIBUTING.md): current changes and review expectations.
 
 ## Non-negotiable review rules
 
@@ -18,8 +18,8 @@
 - The [AGENT cross-scope map](lists/references/agent-domain-map.md) defines ownership of backend API `AGENT-095`–`AGENT-116`. A gap in one source file is not a globally missing ID.
 - **Fetch source at a pinned SHA.** The skill's [release metadata](skills/awesome-checklists/references/source-release.json) identifies its immutable default source. Record that checklist SHA separately from the reviewed project SHA. Newer `main` criteria are not silently included in older pinned releases.
 - MCP compatibility must be checked against the running SDK's negotiated revision; the maintained stable specification date is in [release metadata](skills/awesome-checklists/references/source-release.json).
-- Do not run unauthorized intrusive tests or untrusted third-party tools, grant production credentials, claim that a suggested tool is a validator, or fabricate an independent reviewer or PASS result. See [authorship limits](AUTHORSHIP.md) and [field review protocol](lists/references/independent-review-protocol.md).
-- For material checklist changes, run local checks and seek qualified review as appropriate. Legacy source-lint and website workflows remain disabled; new curation quality and weekly link workflows are active when merged. A direct commit does not prove independent review. See [CONTRIBUTING.md](CONTRIBUTING.md).
+- Do not run unauthorized intrusive tests or untrusted third-party tools, grant production credentials, claim that a suggested tool is a validator, or fabricate an independent reviewer or PASS result. See [authorship limits](docs/AUTHORSHIP.md) and [field review protocol](lists/references/independent-review-protocol.md).
+- For material checklist changes, run local checks and seek qualified review as appropriate. Legacy source-lint and website workflows remain disabled; new curation quality and weekly link workflows are active when merged. A direct commit does not prove independent review. See [CONTRIBUTING.md](docs/CONTRIBUTING.md).
 
 ## Verify source changes
 
