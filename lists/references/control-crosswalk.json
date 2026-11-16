@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-11-15",
+  "source_of_internal_ids": "The current numbered checklist markdown, not an actual project review",
+  "completeness": "Deliberately limited starter crosswalk: non-covered IDs and other external requirements remain unmapped",
+  "disclaimer": "External identifiers have been checked in the indicated primary sources, but each topic alignment is a PROPOSED PARTIAL MAPPING, not a verified equivalent control, compliance assertion or audit opinion",
+  "standards": {
+    "ASVS": {
+      "version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv",
+      "identifier_verification": "Exact Vn.n.n and level found in primary public ASVS 5.0.0 English CSV"
+    },
+    "NIST_CSF": {
+      "version": "NIST Cybersecurity Framework 2.0",
+      "source_url": "https://github.com/usnistgov/oscal-content/blob/main/nist.gov/CSF/v2.0/yaml/NIST_CSF_v2.0_catalog.yaml",
+      "identifier_verification": "Exact subcategory identifier checked in NIST government OSCAL CSF v2.0 catalog"
+    },
+    "ISO_27002": {
+      "version": "ISO/IEC 27002:2022",
+      "source_url": "https://www.iso.org/obp/ui/?_escaped_fragment_=iso%3Astd%3Aiso-iec%3A27002%3Aed-3%3Av1%3Aen",
+      "identifier_verification": "Control number and subject checked in ISO standard public index; full content is licensed"
+    },
+    "SOC2_TSC": {
+      "version": "AICPA Trust Services Criteria TSP Section 100",
+      "source_url": "https://us.aicpa.org/content/dam/aicpa/interestareas/frc/assuranceadvisoryservices/downloadabledocuments/trust-services-criteria-redlined.pdf",
+      "identifier_verification": "CC identifier checked in official AICPA-published Trust Services Criteria PDF; licensed criteria and current audit period must be reviewed"
+    }
+  },
+  "mappings": [
+    {
+      "check_id": "SEC-007",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-8.2.1",
+      "external_level": "L1",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Function-level server authorization; checklist also covers objects and tenants",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-007",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-8.2.2",
+      "external_level": "L1",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Object-specific authorization and IDOR/BOLA; partial SEC-007 coverage",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-118",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-1.2.4",
+      "external_level": "L1",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Parameterized database queries; proposed partial mapping to SQL/NoSQL injection-specific test. No independent project test is implied.",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-009",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-7.3.1",
+      "external_level": "L2",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Inactivity reauthentication; one half of session-expiry check",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-009",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-7.3.2",
+      "external_level": "L2",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Maximum absolute session lifetime; additional expiry evidence",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-010",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-6.1.1",
+      "external_level": "L1",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Credential attack defense design; checklist requires runtime tests, beyond the ASVS documentation item",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-102",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-6.3.3",
+      "external_level": "L2",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "MFA mechanism; ASVS scope and strength may exceed privileged-only review",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-103",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-11.4.2",
+      "external_level": "L2",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Password storage with intensive key-derivation/hash; independently test parameters",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-110",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-7.2.4",
+      "external_level": "L2",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "New session tokens after authentication; privilege-change cases may require other controls",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-111",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-7.4.1",
+      "external_level": "L2",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Disallow reuse of terminated sessions",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-021",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-12.1.1",
+      "external_level": "L1",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "TLS protocol versions; does not cover all HSTS or certificate checks",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-024",
+      "framework": "ASVS",
+      "framework_version": "OWASP ASVS 5.0.0 (2025-05-30)",
+      "external_id": "v5.0.0-16.2.5",
+      "external_level": "L2",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Sensitive data in logs; the checklist also addresses traces and analytics",
+      "source_url": "https://github.com/OWASP/ASVS/blob/master/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "check_id": "SEC-007",
+      "framework": "NIST_CSF",
+      "framework_version": "NIST Cybersecurity Framework 2.0",
+      "external_id": "PR.AA-05",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Least privilege and authorization management; framework outcome, not a per-endpoint test",
+      "source_url": "https://github.com/usnistgov/oscal-content/blob/main/nist.gov/CSF/v2.0/yaml/NIST_CSF_v2.0_catalog.yaml"
+    },
+    {
+      "check_id": "SEC-102",
+      "framework": "NIST_CSF",
+      "framework_version": "NIST Cybersecurity Framework 2.0",
+      "external_id": "PR.AA-03",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Authentication including stronger factors; broad outcome",
+      "source_url": "https://github.com/usnistgov/oscal-content/blob/main/nist.gov/CSF/v2.0/yaml/NIST_CSF_v2.0_catalog.yaml"
+    },
+    {
+      "check_id": "SEC-021",
+      "framework": "NIST_CSF",
+      "framework_version": "NIST Cybersecurity Framework 2.0",
+      "external_id": "PR.DS-02",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Protection of data in transit, broader than HTTPS checks",
+      "source_url": "https://github.com/usnistgov/oscal-content/blob/main/nist.gov/CSF/v2.0/yaml/NIST_CSF_v2.0_catalog.yaml"
+    },
+    {
+      "check_id": "SEC-031",
+      "framework": "NIST_CSF",
+      "framework_version": "NIST Cybersecurity Framework 2.0",
+      "external_id": "RS.MA-01",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Incident-response management, broader than a documented plan",
+      "source_url": "https://github.com/usnistgov/oscal-content/blob/main/nist.gov/CSF/v2.0/yaml/NIST_CSF_v2.0_catalog.yaml"
+    },
+    {
+      "check_id": "SEC-035",
+      "framework": "NIST_CSF",
+      "framework_version": "NIST Cybersecurity Framework 2.0",
+      "external_id": "DE.CM-01",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Monitoring systems and networks, broader than alert routing",
+      "source_url": "https://github.com/usnistgov/oscal-content/blob/main/nist.gov/CSF/v2.0/yaml/NIST_CSF_v2.0_catalog.yaml"
+    },
+    {
+      "check_id": "DATA-148",
+      "framework": "NIST_CSF",
+      "framework_version": "NIST Cybersecurity Framework 2.0",
+      "external_id": "PR.DS-11",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Recovery testing related to backups, partial overlap only",
+      "source_url": "https://github.com/usnistgov/oscal-content/blob/main/nist.gov/CSF/v2.0/yaml/NIST_CSF_v2.0_catalog.yaml"
+    },
+    {
+      "check_id": "SEC-007",
+      "framework": "ISO_27002",
+      "framework_version": "ISO/IEC 27002:2022",
+      "external_id": "5.15",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Access control topic in ISO/IEC 27002:2022; requires licensed ISO/IEC 27001 Annex A applicability review",
+      "source_url": "https://www.iso.org/obp/ui/?_escaped_fragment_=iso%3Astd%3Aiso-iec%3A27002%3Aed-3%3Av1%3Aen"
+    },
+    {
+      "check_id": "SEC-032",
+      "framework": "ISO_27002",
+      "framework_version": "ISO/IEC 27002:2022",
+      "external_id": "8.8",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Management of technical vulnerabilities; requires full licensed control assessment",
+      "source_url": "https://www.iso.org/obp/ui/?_escaped_fragment_=iso%3Astd%3Aiso-iec%3A27002%3Aed-3%3Av1%3Aen"
+    },
+    {
+      "check_id": "SEC-007",
+      "framework": "SOC2_TSC",
+      "framework_version": "AICPA Trust Services Criteria TSP Section 100",
+      "external_id": "CC6.1",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Logical access security in AICPA Trust Services Criteria; broader organizational criteria",
+      "source_url": "https://us.aicpa.org/content/dam/aicpa/interestareas/frc/assuranceadvisoryservices/downloadabledocuments/trust-services-criteria-redlined.pdf"
+    },
+    {
+      "check_id": "SEC-035",
+      "framework": "SOC2_TSC",
+      "framework_version": "AICPA Trust Services Criteria TSP Section 100",
+      "external_id": "CC7.2",
+      "mapping_status": "proposed-partial-topic-alignment",
+      "identifier_verification": "primary-source-id-confirmed",
+      "rationale": "Security event monitoring and anomalous activity; broader organizational criteria",
+      "source_url": "https://us.aicpa.org/content/dam/aicpa/interestareas/frc/assuranceadvisoryservices/downloadabledocuments/trust-services-criteria-redlined.pdf"
+    }
+  ]
+}

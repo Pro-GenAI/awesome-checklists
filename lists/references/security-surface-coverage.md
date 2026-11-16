@@ -1,0 +1,17 @@
+# Security attack-surface coverage crosscheck
+
+**Checked against source:** 2026-11-15. This document locates existing check IDs; it does not claim that an application passed any test or that the full library was semantically audited. Do not add new IDs merely to make cross-scope check counts equal. Test the correct trust boundary and link evidence to each relevant ID.
+
+| Threat / control | Shared / backend coverage | Frontend or API coverage | Verification emphasis |
+| --- | --- | --- | --- |
+| IDOR / BOLA and tenant access | [`SEC-007`](../backend/09_Security.md), [`SEC-045`](../backend/09_Security.md) | [`APID-079`](../backend/07_API_Design_and_Integrations.md) | As a low-privilege user, modify object and tenant identifiers on read/write/delete; server must reject unauthorized access |
+| SSRF and outbound destinations | [`SEC-064`](../backend/09_Security.md) | [`APID-056`](../backend/07_API_Design_and_Integrations.md) | Exercise allowed/dangerous fetch targets and redirects in a sandbox; enforce destination restrictions outside the client |
+| HTTP request desynchronization | [`SEC-013`](../backend/09_Security.md) | Not a CORS/browser-only concern | Use authorized, isolated ingress/upstream parser differential tests and record observed routing/acceptance |
+| Filesystem traversal | [`SEC-121`](../backend/09_Security.md) | [`SEC-049`](../backend/09_Security.md) for upload-specific boundaries | Test encoded/normalized path escape attempts against actual authorized roots |
+| CSRF and browser-origin rules | [`SEC-027`](../backend/09_Security.md), [`SEC-066`](../backend/09_Security.md) | [`SEC-076`](../frontend/09_Security.md), [`APID-087`](../backend/07_API_Design_and_Integrations.md) | State-changing browser requests enforce CSRF controls when applicable; test CORS allowlist/credentials/preflight without using CORS as authorization |
+| Privileged audit and integrity | [`SEC-071`](../backend/09_Security.md), [`SEC-024`](../05_Security.md) | [`APID-093`](../backend/07_API_Design_and_Integrations.md) | Record actor, action, target, authorization outcome and relevant correlation without leaking protected data |
+| Encryption at rest and key management | [`SEC-022`](../backend/09_Security.md), [`SEC-020`](../05_Security.md) | [`SEC-078`](../frontend/09_Security.md) addresses unsafe browser storage, **not** server-side encryption | Verify algorithms and storage configuration, key separation/scopes, rotation/backup and access controls; frontend must not be treated as key custody |
+
+**Scope caveats:** IDOR/BOLA, SSRF and server-side encryption protections are predominantly backend responsibilities; the frontend cannot prove they are enforced. Several source checks are broader than a single test and therefore require multiple assertions within a documented acceptance result or further editorial splitting. The [read-only compound-check audit](../../skills/awesome-checklists/scripts/audit_compound_checks.py) is a backlog tool, not proof all source checks are atomic.
+
+**Test safety:** Penetration attempts, outbound URL probes, scanners and exploit fixtures require authorization and appropriate isolation. Do not scan third-party production, run target-controlled code without OS isolation, or grant agent tools elevated credentials by default. See the [optional security tooling catalog](security-testing-tools.md) and [shared priority rubric](review-method.md).

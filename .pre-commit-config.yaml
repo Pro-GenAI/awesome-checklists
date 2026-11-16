@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: awesome-lint
+        name: Awesome list conventions
+        entry: npx --yes awesome-lint docs/AWESOME.md
+        language: system
+        pass_filenames: false
+        files: ^(AWESOME|README)\.md$
+      - id: lifecycle-catalog
+        name: Verify drop-in catalog/Markdown parity
+        entry: python3 scripts/validate_lifecycle_catalog.py
+        language: system
+        pass_filenames: false
+        files: ^(checklists/|lists/|scripts/validate_lifecycle_catalog\.py)

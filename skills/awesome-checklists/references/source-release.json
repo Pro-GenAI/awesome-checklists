@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "repository": "Pro-GenAI/awesome-checklists",
+  "visibility": "public",
+  "mcp_stable_revision": "2026-07-28",
+  "checklist_source_sha": "90367fddd2ed2df4b07f7f7abe6e831f0fb3d9d0",
+  "pinned_on": "2026-11-15",
+  "note": "Default immutable source includes 91 files and 4,215 numbered checks. Update only after local validation and explicit pin-to-main ancestry verification; GitHub Actions is disabled. This pinned release does not automatically track main; record product SHA and negotiated MCP version separately."
+}

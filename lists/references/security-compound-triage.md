@@ -1,0 +1,13 @@
+# Security atomicity review — editorial split and remaining limitations
+
+**Editorial decomposition: 2026-11-15.** SEC-012, SEC-013 and SEC-014 have been narrowed to individual review outcomes and linked to existing Security controls instead of creating duplicate check IDs. This is a **maintainer-level wording change**, not an independently signed-off security audit. Existing PASS results for the earlier compound text **must not carry over automatically**.
+
+| Previous compound criterion | Current single-assertion ownership | Existing independently testable controls |
+| --- | --- | --- |
+| SEC-012: inputs, outputs, injection, deserialization | [SEC-012](../05_Security.md): validate server-side input contracts; **SEC-118**: database injection; **SEC-119**: command injection; **SEC-120**: unsafe deserialization | [SEC-072](../frontend/09_Security.md): contextual output encoding and XSS; [SEC-065](../backend/09_Security.md): API request schemas |
+| SEC-013: CSRF, XSS, SSRF, traversal, uploads, request smuggling | [SEC-013](../backend/09_Security.md): HTTP request smuggling/desynchronization; **SEC-121**: filesystem traversal | [SEC-076](../frontend/09_Security.md): CSRF; [SEC-072](../frontend/09_Security.md): XSS; [SEC-064](../backend/09_Security.md): SSRF; [SEC-049](../backend/09_Security.md): file-handling security |
+| SEC-014: API authorization, rate, validation, replay and errors | [SEC-014](../backend/09_Security.md): high-impact API replay resistance | [SEC-007](../backend/09_Security.md): backend authorization; [SEC-062](../backend/09_Security.md): resource limits; [SEC-065](../backend/09_Security.md): schemas; [SEC-069](../backend/09_Security.md): safe errors; [SEC-070](../backend/09_Security.md): webhook replay |
+
+**Test acceptance:** A PASS for a current ID requires direct evidence for that ID's specified behavior, actual attack surface, test environment and inspected project revision. A simulated denial or static scanner finding cannot prove all adjacent controls. Record UNKNOWN for untested applicable checks, FAIL for demonstrated control failures and N/A only with a documented architecture-specific rationale. Review evidence per ID; reusable artifacts do not create automatic PASS decisions.
+
+**Outstanding editorial work:** Other library criteria may still bundle independently failing controls. The [compound-check audit](../../skills/awesome-checklists/scripts/audit_compound_checks.py) is heuristic and does not certify atomicity. The four new SEC IDs have not received an independent human technical review or field validation. The [stable-ID history](id-history.md) records the migration; compare project snapshots with the [downstream update guide](downstream-update-guide.md).

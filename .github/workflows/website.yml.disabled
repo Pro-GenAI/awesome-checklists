@@ -1,0 +1,54 @@
+name: Build checklist website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.md'
+      - '**/*.md'
+      - 'docs/website/**'
+      - 'skills/**'
+      - '.github/workflows/website.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checklist-website
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r docs/website/requirements.txt
+      - name: Test agent skill package and checklist fetch helper
+        run: python -m unittest discover -s skills/awesome-checklists/tests -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.20.0'
+      - name: Validate Skills CLI discovery
+        run: |
+          npx --yes skills add . --list > /tmp/awesome-checklists-skills.txt
+          cat /tmp/awesome-checklists-skills.txt
+          grep -q 'awesome-checklists' /tmp/awesome-checklists-skills.txt
+      - name: Build static site
+        env:
+          SITE_URL: https://awesome-checklists.pages.dev/
+          WEBSITE_NO_VENV: '1'
+        run: bash docs/website/build.sh
+      - name: Validate generated pages
+        run: python docs/website/check_site.py
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: checklist-website
+          path: docs/website/dist
+          if-no-files-found: error
+

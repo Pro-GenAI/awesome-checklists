@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "domain": "AGENT",
+  "checked_at": "2026-11-15",
+  "contiguous_numeric_ids": [
+    1,
+    141
+  ],
+  "scope_slices": [
+    {
+      "path": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+      "ranges": [
+        [
+          1,
+          94
+        ],
+        [
+          117,
+          141
+        ]
+      ],
+      "required_sections": [
+        "Agent goals and workflow",
+        "Tools, permissions, and boundaries",
+        "Handoffs, state, and execution limits",
+        "Human approval and failure recovery",
+        "Frontend Checks",
+        "Release gate",
+        "Trusted references and scope"
+      ],
+      "required_links": [
+        "../backend/17_AI_Agents_and_Tool_Orchestration.md#api-checks",
+        "../references/agent-domain-map.md"
+      ]
+    },
+    {
+      "path": "lists/backend/17_AI_Agents_and_Tool_Orchestration.md",
+      "ranges": [
+        [
+          95,
+          116
+        ]
+      ],
+      "required_sections": [
+        "API Checks",
+        "Release gate",
+        "Trusted references and scope"
+      ],
+      "required_links": [
+        "../AI/11_AI_Agents_and_Tool_Orchestration.md",
+        "../references/agent-domain-map.md"
+      ]
+    }
+  ],
+  "notes": "AGENT-095 through AGENT-116 belong to backend. AGENT-137 through AGENT-141 split tool-call input/schema facets from AGENT-026; maintain source history and retest old PASS results. Structural continuity is not independent validation."
+}

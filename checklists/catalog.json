@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "description": "Small drop-in GenAI lifecycle selections mapped to existing stable checklist IDs; not an alternate source of truth or a certification.",
+  "severity_policy": "project-defined; no globally valid severity claim",
+  "automation_policy": "automated_check indicates only a proposed integration signal; none is implemented by this repository or automatically PASS",
+  "checklists": [
+    {
+      "slug": "prompt-context",
+      "title": "Prompt & Context Engineering",
+      "stage": "design-and-implementation",
+      "items": [
+        {
+          "id": "PROMPT-006",
+          "priority_hint": "P1",
+          "label": "Separate trusted instructions from user and retrieved material",
+          "why": "Stops external content from being promoted into privileged instructions",
+          "source": "lists/AI/09_Prompt_Engineering_and_Versioning.md",
+          "severity": "project-defined",
+          "automated_check": null,
+          "stage": "design-and-implementation"
+        },
+        {
+          "id": "PROMPT-039",
+          "priority_hint": "P1",
+          "label": "Validate structured model output and tool arguments with strict schemas",
+          "why": "Prevents malformed or attacker-controlled fields from crossing execution boundaries",
+          "source": "lists/AI/09_Prompt_Engineering_and_Versioning.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Target-app schema/contract test"
+          },
+          "stage": "design-and-implementation"
+        },
+        {
+          "id": "PROMPT-031",
+          "priority_hint": "P1",
+          "label": "Budget system prompts, history, retrieval and output tokens",
+          "why": "Avoids hidden context overflow and unbounded per-request cost",
+          "source": "lists/AI/09_Prompt_Engineering_and_Versioning.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Target-app token budget regression"
+          },
+          "stage": "design-and-implementation"
+        },
+        {
+          "id": "PROMPT-032",
+          "priority_hint": "P1",
+          "label": "Test truncation and overflow against critical instructions and evidence",
+          "why": "Detects silent loss of the policies or facts a response needs",
+          "source": "lists/AI/09_Prompt_Engineering_and_Versioning.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Target-app long-context test"
+          },
+          "stage": "design-and-implementation"
+        },
+        {
+          "id": "PROMPT-040",
+          "priority_hint": "P1",
+          "label": "Exercise direct and indirect prompt injection in authorized tests",
+          "why": "Detects unexpected instruction following through tool or document content",
+          "source": "lists/AI/09_Prompt_Engineering_and_Versioning.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Sandboxed adversarial prompt suite"
+          },
+          "stage": "design-and-implementation"
+        }
+      ]
+    },
+    {
+      "slug": "rag-data",
+      "title": "RAG & Data Pipelines",
+      "stage": "data-and-retrieval",
+      "items": [
+        {
+          "id": "RAG-023",
+          "priority_hint": "P1",
+          "label": "Select chunking using document structure and retrieval evidence",
+          "why": "Avoids slicing away relevant facts or merging unrelated passages",
+          "source": "lists/AI/10_RAG_and_Knowledge_Bases.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Chunking A/B retrieval evaluation"
+          },
+          "stage": "data-and-retrieval"
+        },
+        {
+          "id": "RAG-033",
+          "priority_hint": "P1",
+          "label": "Verify query and document embedding settings are compatible",
+          "why": "Prevents invalid similarity scoring after model or index changes",
+          "source": "lists/AI/10_RAG_and_Knowledge_Bases.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Embedding/index compatibility assertion"
+          },
+          "stage": "data-and-retrieval"
+        },
+        {
+          "id": "RAG-040",
+          "priority_hint": "P1",
+          "label": "Test index swaps without mixing incompatible embeddings",
+          "why": "Prevents partial migrations from serving inconsistent results",
+          "source": "lists/AI/10_RAG_and_Knowledge_Bases.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Staging blue-green index test"
+          },
+          "stage": "data-and-retrieval"
+        },
+        {
+          "id": "RAG-046",
+          "priority_hint": "P1",
+          "label": "Maintain held-out query-to-passage relevance judgments",
+          "why": "Makes precision and recall regressions observable",
+          "source": "lists/AI/10_RAG_and_Knowledge_Bases.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Versioned retrieval benchmark"
+          },
+          "stage": "data-and-retrieval"
+        },
+        {
+          "id": "RAG-043",
+          "priority_hint": "P1",
+          "label": "Verify removed sources disappear from vectors and caches on time",
+          "why": "Prevents deleted or access-revoked material from resurfacing",
+          "source": "lists/AI/10_RAG_and_Knowledge_Bases.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Deletion propagation integration test"
+          },
+          "stage": "data-and-retrieval"
+        }
+      ]
+    },
+    {
+      "slug": "agent-safety",
+      "title": "Agent Safety & Runtime Guardrails",
+      "stage": "agent-runtime",
+      "items": [
+        {
+          "id": "AGENT-026",
+          "priority_hint": "P1",
+          "label": "Reject tool calls outside the trusted tool registry",
+          "why": "Prevents agent output from inventing executable capabilities",
+          "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Sandbox deny-unknown-tool test"
+          },
+          "stage": "agent-runtime"
+        },
+        {
+          "id": "AGENT-043",
+          "priority_hint": "P1",
+          "label": "Authorize high-impact tool actions in deterministic policy code",
+          "why": "Prevents model suggestions from bypassing user or service permissions",
+          "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Per-operation permission test"
+          },
+          "stage": "agent-runtime"
+        },
+        {
+          "id": "AGENT-034",
+          "priority_hint": "P1",
+          "label": "Test injection attempts to redirect tools or reveal secrets",
+          "why": "Finds trust-boundary failures before delegating user authority",
+          "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Sandboxed tool injection suite"
+          },
+          "stage": "agent-runtime"
+        },
+        {
+          "id": "AGENT-055",
+          "priority_hint": "P1",
+          "label": "Trace run and parent-child IDs across calls and handoffs",
+          "why": "Makes multi-agent failures and action provenance auditable",
+          "source": "lists/AI/11_AI_Agents_and_Tool_Orchestration.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Distributed trace continuity assertion"
+          },
+          "stage": "agent-runtime"
+        },
+        {
+          "id": "SERVE-057",
+          "priority_hint": "P1",
+          "label": "Prevent irreversible actions from partial unvalidated streams",
+          "why": "Prevents streaming output from triggering premature side effects",
+          "source": "lists/AI/12_AI_Inference_and_Serving.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Partial-stream cancellation test"
+          },
+          "stage": "agent-runtime"
+        }
+      ]
+    },
+    {
+      "slug": "evaluation-observability",
+      "title": "Evaluation & Observability",
+      "stage": "verification-and-operations",
+      "items": [
+        {
+          "id": "EVAL-023",
+          "priority_hint": "P2",
+          "label": "Version golden evaluation cases with expected outcomes",
+          "why": "Prevents silent test-dataset drift across prompt and model releases",
+          "source": "lists/AI/15_AI_Evaluation_and_Regression.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Golden dataset manifest validation"
+          },
+          "stage": "verification-and-operations"
+        },
+        {
+          "id": "EVAL-047",
+          "priority_hint": "P1",
+          "label": "Use deterministic assertions for schemas, tool calls and refusals",
+          "why": "Catches contract failures that subjective model scores can miss",
+          "source": "lists/AI/15_AI_Evaluation_and_Regression.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "CI assertions for supported contracts"
+          },
+          "stage": "verification-and-operations"
+        },
+        {
+          "id": "EVAL-066",
+          "priority_hint": "P1",
+          "label": "Score retrieval relevance separately from groundedness and citations",
+          "why": "Prevents a good answer score from concealing retrieval regressions",
+          "source": "lists/AI/15_AI_Evaluation_and_Regression.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "RAG benchmark with separated metrics"
+          },
+          "stage": "verification-and-operations"
+        },
+        {
+          "id": "DRIFT-008",
+          "priority_hint": "P1",
+          "label": "Monitor end-to-end and time-to-first-output latency",
+          "why": "Finds queue, stream and orchestration slowdowns unseen by model metrics",
+          "source": "lists/AI/18_AI_Monitoring_and_Drift.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "p95 latency alert on traced user journeys"
+          },
+          "stage": "verification-and-operations"
+        },
+        {
+          "id": "DRIFT-010",
+          "priority_hint": "P1",
+          "label": "Monitor billable tokens, requests and provider usage",
+          "why": "Detects unexpected spend and inefficient retries",
+          "source": "lists/AI/18_AI_Monitoring_and_Drift.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Cost/usage budget alert"
+          },
+          "stage": "verification-and-operations"
+        }
+      ]
+    },
+    {
+      "slug": "production-readiness",
+      "title": "Production Readiness",
+      "stage": "release",
+      "items": [
+        {
+          "id": "PERF-024",
+          "priority_hint": "P1",
+          "label": "Test cold-start and warm-start runtime initialization",
+          "why": "Catches failures hidden by warm developer machines or import-time side effects",
+          "source": "lists/backend/27_Performance_and_Scalability.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Cold-start smoke test"
+          },
+          "stage": "release"
+        },
+        {
+          "id": "SEC-105",
+          "priority_hint": "P1",
+          "label": "Scan source, history and build artifacts for secrets",
+          "why": "Prevents exposed production credentials from reaching releases",
+          "source": "lists/05_Security.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Secret scanning in target CI"
+          },
+          "stage": "release"
+        },
+        {
+          "id": "OPS-093",
+          "priority_hint": "P1",
+          "label": "Test API rate limits, upstream timeouts and quotas",
+          "why": "Constrains runaway inference use and dependency overload",
+          "source": "lists/backend/30_DevOps_and_CI_CD.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Rate-limit and timeout integration test"
+          },
+          "stage": "release"
+        },
+        {
+          "id": "OPS-032",
+          "priority_hint": "P1",
+          "label": "Keep base images and dependencies on a patch policy",
+          "why": "Reduces known vulnerabilities in container and runtime supply chains",
+          "source": "lists/backend/30_DevOps_and_CI_CD.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Dependency/container scanning"
+          },
+          "stage": "release"
+        },
+        {
+          "id": "SERVE-042",
+          "priority_hint": "P1",
+          "label": "Test provider throttling, backpressure and client retries",
+          "why": "Prevents retry storms and unpredictable inference availability",
+          "source": "lists/AI/12_AI_Inference_and_Serving.md",
+          "severity": "project-defined",
+          "automated_check": {
+            "status": "integration-required",
+            "suggested_signal": "Load test with synthetic 429 responses"
+          },
+          "stage": "release"
+        }
+      ]
+    }
+  ]
+}

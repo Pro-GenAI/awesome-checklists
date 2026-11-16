@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>27 — Performance and Scalability Checklist | Awesome Checklists</title>
+  <meta name="description" content="Verify that priority user experiences and services meet documented latency, throughput, capacity, and efficiency objectives at realistic demand. Separate browse">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://pro-genai.github.io/awesome-checklists/backend/27_Performance_and_Scalability.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Awesome Checklists">
+  <meta property="og:title" content="27 — Performance and Scalability Checklist | Awesome Checklists">
+  <meta property="og:description" content="Verify that priority user experiences and services meet documented latency, throughput, capacity, and efficiency objectives at realistic demand. Separate browse">
+  <meta property="og:url" content="https://pro-genai.github.io/awesome-checklists/backend/27_Performance_and_Scalability.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" type="text/plain" title="LLM content index" href="../llms.txt">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"27 — Performance and Scalability Checklist","description":"Verify that priority user experiences and services meet documented latency, throughput, capacity, and efficiency objectives at realistic demand. Separate browser metrics from backend metrics","mainEntityOfPage":"https://pro-genai.github.io/awesome-checklists/backend/27_Performance_and_Scalability.html","author":{"@type":"Organization","name":"Pro-GenAI"},"isPartOf":{"@type":"WebSite","name":"Awesome Checklists","url":"https://pro-genai.github.io/awesome-checklists/","description":"Reference checklists for software and AI product development."}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pro-genai.github.io/awesome-checklists/"},{"@type":"ListItem","position":2,"name":"Backend","item":"https://pro-genai.github.io/awesome-checklists/backend/"},{"@type":"ListItem","position":3,"name":"27 — Performance and Scalability Checklist","item":"https://pro-genai.github.io/awesome-checklists/backend/27_Performance_and_Scalability.html"}]}]}</script>
+</head>
+<body data-root="../" data-search-index="../search-index.json">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="../index.html" aria-label="Awesome Checklists home"><span class="brand-mark" aria-hidden="true">✓</span><span>awesome<span class="brand-highlight">checklists</span></span></a>
+  <div class="topbar-actions"><a class="topbar-link" href="../llms.txt">llms.txt</a><a class="topbar-link" href="https://github.com/Pro-GenAI/awesome-checklists" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+  <div class="search-wrap"><label class="visually-hidden" for="search">Search checklists</label><input id="search" type="search" placeholder="Search all checklists…" autocomplete="off" aria-controls="search-results" aria-expanded="false"><kbd>/</kbd><div id="search-results" class="search-results" hidden></div></div>
+</header>
+<div class="site-layout">
+  <aside class="sidebar" aria-label="Checklist navigation"><div class="sidebar-inner"><div class="sidebar-kicker">THE LIBRARY</div><a class="sidebar-main-link" href="../index.html">Overview</a><a class="sidebar-main-link" href="../AGENTS.html">Contribution guide</a><details class="sidebar-group"><summary>Shared<span class="count">14</span></summary><a class="sidebar-collection" href="../index.html">Browse collection</a><a class="sidebar-item" href="../01_Requirements_and_Planning.html">Requirements and Planning Checklist</a><a class="sidebar-item" href="../02_LegalIssues.html">Legal Issues Checklist</a><a class="sidebar-item" href="../03_Architecture_and_CodeQuality.html">Architecture and Code Quality Checklist</a><a class="sidebar-item" href="../04_Internationalization_and_Localization.html">Internationalization and Localization Checklist</a><a class="sidebar-item" href="../05_Security.html">Security Checklist</a><a class="sidebar-item" href="../06_Cost_and_FinOps.html">Cost and FinOps Checklist</a><a class="sidebar-item" href="../07_Documentation_and_DeveloperExperience.html">Documentation and Developer Experience Checklist</a><a class="sidebar-item" href="../08_Testing.html">Testing Checklist</a><a class="sidebar-item" href="../09_Performance_and_Scalability.html">Performance and Scalability Checklist</a><a class="sidebar-item" href="../10_Reliability_and_DisasterRecovery.html">Reliability and Disaster Recovery Checklist</a><a class="sidebar-item" href="../11_DevOps_and_CI_CD.html">DevOps and CI/CD Checklist</a><a class="sidebar-item" href="../12_Monitoring_and_Observability.html">Monitoring and Observability Checklist</a><a class="sidebar-item" href="../13_Analytics_and_ProductMetrics.html">Analytics and Product Metrics Checklist</a><a class="sidebar-item" href="../14_Release_and_LaunchReadiness.html">Release and Launch Readiness Checklist</a></details><details class="sidebar-group"><summary>Frontend<span class="count">20</span></summary><a class="sidebar-collection" href="../frontend/index.html">Browse collection</a><a class="sidebar-item" href="../frontend/01_Requirements_and_Planning.html">Requirements and Planning Checklist</a><a class="sidebar-item" href="../frontend/02_LegalIssues.html">Legal Issues Checklist</a><a class="sidebar-item" href="../frontend/03_Architecture_and_CodeQuality.html">Architecture and Code Quality Checklist</a><a class="sidebar-item" href="../frontend/04_UI_UX_and_Usability.html">UI, UX, and Usability Checklist</a><a class="sidebar-item" href="../frontend/05_Accessibility.html">Accessibility Checklist</a><a class="sidebar-item" href="../frontend/06_Internationalization_and_Localization.html">Internationalization and Localization Checklist</a><a class="sidebar-item" href="../frontend/07_API_Design_and_Integrations.html">API Design and Integrations Checklist</a><a class="sidebar-item" href="../frontend/08_Data_and_DatabaseManagement.html">Data and Database Management Checklist</a><a class="sidebar-item" href="../frontend/09_Security.html">Security Checklist</a><a class="sidebar-item" href="../frontend/10_Documentation_and_DeveloperExperience.html">Documentation and Developer Experience Checklist</a><a class="sidebar-item" href="../frontend/11_Testing.html">Testing Checklist</a><a class="sidebar-item" href="../frontend/12_Performance_and_Scalability.html">Performance and Scalability Checklist</a><a class="sidebar-item" href="../frontend/13_SEO.html">SEO Checklist</a><a class="sidebar-item" href="../frontend/14_GEO_and_AEO.html">GEO and AEO Checklist</a><a class="sidebar-item" href="../frontend/15_DevOps_and_CI_CD.html">DevOps and CI/CD Checklist</a><a class="sidebar-item" href="../frontend/16_Reliability_and_DisasterRecovery.html">Reliability and Disaster Recovery Checklist</a><a class="sidebar-item" href="../frontend/17_Monitoring_and_Observability.html">Monitoring and Observability Checklist</a><a class="sidebar-item" href="../frontend/18_Analytics_and_ProductMetrics.html">Analytics and Product Metrics Checklist</a><a class="sidebar-item" href="../frontend/19_Cost_and_FinOps.html">Cost and FinOps Checklist</a><a class="sidebar-item" href="../frontend/20_Release_and_LaunchReadiness.html">Release and Launch Readiness Checklist</a></details><details class="sidebar-group" open><summary>Backend<span class="count">35</span></summary><a class="sidebar-collection" href="index.html">Browse collection</a><a class="sidebar-item" href="01_Requirements_and_Planning.html">Requirements and Planning Checklist</a><a class="sidebar-item" href="02_LegalIssues.html">Legal Issues Checklist</a><a class="sidebar-item" href="03_Architecture_and_CodeQuality.html">Architecture and Code Quality Checklist</a><a class="sidebar-item" href="04_UI_UX_and_Usability.html">UI, UX, and Usability Checklist</a><a class="sidebar-item" href="05_Accessibility.html">Accessibility Checklist</a><a class="sidebar-item" href="06_Internationalization_and_Localization.html">Internationalization and Localization Checklist</a><a class="sidebar-item" href="07_API_Design_and_Integrations.html">API Design and Integrations Checklist</a><a class="sidebar-item" href="08_Data_and_DatabaseManagement.html">Data and Database Management Checklist</a><a class="sidebar-item" href="09_Security.html">Security Checklist</a><a class="sidebar-item" href="10_AI_Evaluation_and_Governance.html">AI Evaluation and Governance Checklist</a><a class="sidebar-item" href="11_AI_Model_Selection_and_Benchmarking.html">AI Model Selection and Benchmarking Checklist</a><a class="sidebar-item" href="12_AI_Data_Curation_and_Labeling.html">AI Data Curation and Labeling Checklist</a><a class="sidebar-item" href="13_AI_Model_and_Dataset_Cards.html">AI Model and Dataset Cards Checklist</a><a class="sidebar-item" href="14_AI_FineTuning_and_Training.html">AI Fine-tuning and Training Checklist</a><a class="sidebar-item" href="15_Prompt_Engineering_and_Versioning.html">Prompt Engineering and Versioning Checklist</a><a class="sidebar-item" href="16_RAG_and_Knowledge_Bases.html">RAG and Knowledge Bases Checklist</a><a class="sidebar-item" href="17_AI_Agents_and_Tool_Orchestration.html">AI Agents and Tool Orchestration Checklist</a><a class="sidebar-item" href="18_AI_Inference_and_Serving.html">AI Inference and Serving Checklist</a><a class="sidebar-item" href="19_Multimodal_AI_Quality.html">Multimodal AI Quality Checklist</a><a class="sidebar-item" href="20_AI_Human_Review_and_Escalation.html">AI Human Review and Escalation Checklist</a><a class="sidebar-item" href="21_AI_Evaluation_and_Regression.html">AI Evaluation and Regression Checklist</a><a class="sidebar-item" href="22_AI_Red_Teaming_and_Guardrails.html">AI Red Teaming and Guardrails Checklist</a><a class="sidebar-item" href="23_MLOps_and_Model_Lifecycle.html">MLOps and Model Lifecycle Checklist</a><a class="sidebar-item" href="24_AI_Monitoring_and_Drift.html">AI Monitoring and Drift Checklist</a><a class="sidebar-item" href="25_Documentation_and_DeveloperExperience.html">Documentation and Developer Experience Checklist</a><a class="sidebar-item" href="26_Testing.html">Testing Checklist</a><a class="sidebar-item active" href="27_Performance_and_Scalability.html" aria-current="page">Performance and Scalability Checklist</a><a class="sidebar-item" href="28_SEO.html">SEO Checklist</a><a class="sidebar-item" href="29_GEO_and_AEO.html">GEO and AEO Checklist</a><a class="sidebar-item" href="30_DevOps_and_CI_CD.html">DevOps and CI/CD Checklist</a><a class="sidebar-item" href="31_Reliability_and_DisasterRecovery.html">Reliability and Disaster Recovery Checklist</a><a class="sidebar-item" href="32_Monitoring_and_Observability.html">Monitoring and Observability Checklist</a><a class="sidebar-item" href="33_Analytics_and_ProductMetrics.html">Analytics and Product Metrics Checklist</a><a class="sidebar-item" href="34_Cost_and_FinOps.html">Cost and FinOps Checklist</a><a class="sidebar-item" href="35_Release_and_LaunchReadiness.html">Release and Launch Readiness Checklist</a></details><details class="sidebar-group"><summary>AI<span class="count">22</span></summary><a class="sidebar-collection" href="../AI/index.html">Browse collection</a><a class="sidebar-item" href="../AI/01_Requirements_and_Planning.html">Requirements and Planning Checklist</a><a class="sidebar-item" href="../AI/02_LegalIssues.html">Legal Issues Checklist</a><a class="sidebar-item" href="../AI/03_AI_Evaluation_and_Governance.html">AI Evaluation and Governance Checklist</a><a class="sidebar-item" href="../AI/04_Security.html">Security Checklist</a><a class="sidebar-item" href="../AI/05_AI_Model_Selection_and_Benchmarking.html">AI Model Selection and Benchmarking Checklist</a><a class="sidebar-item" href="../AI/06_AI_Data_Curation_and_Labeling.html">AI Data Curation and Labeling Checklist</a><a class="sidebar-item" href="../AI/07_AI_Model_and_Dataset_Cards.html">AI Model and Dataset Cards Checklist</a><a class="sidebar-item" href="../AI/08_AI_FineTuning_and_Training.html">AI Fine-tuning and Training Checklist</a><a class="sidebar-item" href="../AI/09_Prompt_Engineering_and_Versioning.html">Prompt Engineering and Versioning Checklist</a><a class="sidebar-item" href="../AI/10_RAG_and_Knowledge_Bases.html">RAG and Knowledge Bases Checklist</a><a class="sidebar-item" href="../AI/11_AI_Agents_and_Tool_Orchestration.html">AI Agents and Tool Orchestration Checklist</a><a class="sidebar-item" href="../AI/12_AI_Inference_and_Serving.html">AI Inference and Serving Checklist</a><a class="sidebar-item" href="../AI/13_Multimodal_AI_Quality.html">Multimodal AI Quality Checklist</a><a class="sidebar-item" href="../AI/14_AI_Human_Review_and_Escalation.html">AI Human Review and Escalation Checklist</a><a class="sidebar-item" href="../AI/15_AI_Evaluation_and_Regression.html">AI Evaluation and Regression Checklist</a><a class="sidebar-item" href="../AI/16_AI_Red_Teaming_and_Guardrails.html">AI Red Teaming and Guardrails Checklist</a><a class="sidebar-item" href="../AI/17_MLOps_and_Model_Lifecycle.html">MLOps and Model Lifecycle Checklist</a><a class="sidebar-item" href="../AI/18_AI_Monitoring_and_Drift.html">AI Monitoring and Drift Checklist</a><a class="sidebar-item" href="../AI/19_Cost_and_FinOps.html">Cost and FinOps Checklist</a><a class="sidebar-item" href="../AI/20_Analytics_and_ProductMetrics.html">Analytics and Product Metrics Checklist</a><a class="sidebar-item" href="../AI/21_GEO_and_AEO.html">GEO and AEO Checklist</a><a class="sidebar-item" href="../AI/22_Release_and_LaunchReadiness.html">Release and Launch Readiness Checklist</a></details><details class="sidebar-group"><summary>Resources<span class="count">3</span></summary><a class="sidebar-item" href="../seo-redesign-url-map-template.html">Website redesign SEO — URL migration map template</a><a class="sidebar-item" href="../source-coverage-audit.html">External checklist coverage audit — 2026-11-13</a><a class="sidebar-item" href="../TODO.html">TODO</a></details></div></aside>
+  <main id="main" class="main"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Backend</a><span aria-hidden="true">/</span><span aria-current="page">27 — Performance and Scalability Checklist</span></nav><article class="prose"><h1 id="27-performance-and-scalability-checklist">27 — Performance and Scalability Checklist<a class="heading-anchor" href="#27-performance-and-scalability-checklist" aria-label="Link to 27 — Performance and Scalability Checklist">#</a></h1>
+<blockquote>
+<p>Verify that priority user experiences and services meet documented latency, throughput, capacity, and efficiency objectives at realistic demand. Separate browser metrics from backend metrics; avoid treating a single benchmark as production capacity proof.</p>
+</blockquote>
+<blockquote>
+<p><strong>Scope: Backend / API-specific.</strong> This file is one part of the 27_Performance_and_Scalability.md checklist. Apply the domain-wide release gate across all applicable scope files; each checklist ID remains unique.</p>
+</blockquote>
+<h2 id="review-details">Review details<a class="heading-anchor" href="#review-details" aria-label="Link to Review details">#</a></h2>
+<ul>
+<li><strong>Project / product:</strong></li>
+<li><strong>Release / version / environment:</strong></li>
+<li><strong>Scope and applicable jurisdictions / markets:</strong></li>
+<li><strong>Target workloads, user cohorts, and devices:</strong></li>
+<li><strong>Performance budgets / SLO references:</strong></li>
+<li><strong>Reviewer / owner:</strong></li>
+<li><strong>Review date:</strong></li>
+<li><strong>Decision:</strong> Pending / Approved / Approved with documented exceptions / Blocked</li>
+</ul>
+<h2 id="how-to-use">How to use<a class="heading-anchor" href="#how-to-use" aria-label="Link to How to use">#</a></h2>
+<ol>
+<li>Copy this template into project-specific review records; leave the shared template unchecked.</li>
+<li>Mark <code>[x]</code> only after verifying a check through a reproducible test, representative field measurement, resource profile, capacity model, or documented decision. Record failed items and <code>N/A</code> reasons outside this template, keyed by <code>PERF</code> ID.</li>
+<li>Use realistic traffic mixes, data sizes, network/device conditions, and explicit percentiles. Document environment limitations and do not use synthetic tests alone to claim production performance.</li>
+<li>Review API and frontend performance separately where relevant. An API-only service or static page may make some checks inapplicable; document why in project records.</li>
+<li>Revisit budgets and tests after workload growth, architecture changes, large frontend changes, or major dependency updates. Coordinate functional correctness, security, reliability, accessibility, and cost reviews with their dedicated checklists.</li>
+</ol>
+<h2 id="performance-budgets-and-measurements">Performance budgets and measurements<a class="heading-anchor" href="#performance-budgets-and-measurements" aria-label="Link to Performance budgets and measurements">#</a></h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-004</strong> Identify production and representative test populations, workloads, regions, devices, network conditions, and data volumes.</li>
+</ul>
+<h2 id="backend-throughput-and-capacity">Backend throughput and capacity<a class="heading-anchor" href="#backend-throughput-and-capacity" aria-label="Link to Backend throughput and capacity">#</a></h2>
+<ul>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-024</strong> Include cold-start and warm-start scenarios when runtime initialization or autoscaling affects latency.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-025</strong> Measure saturation of CPU, memory, disk I/O, network, thread pools, and connection pools where relevant.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-026</strong> Evaluate query execution plans and measured query timings for high-cost database reads and writes.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-030</strong> Test critical cache invalidation or stale-data conditions where optimization can affect correctness.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-031</strong> Measure queue depth, consumer lag, job duration, and retry volume for asynchronous workloads.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-033</strong> Verify expensive work is canceled or bounded when clients disconnect or request deadlines expire.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-017</strong> Model the mix of reads, writes, background work, and high-cost operations observed or forecast in real workloads.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-018</strong> Include authenticated roles, tenant sizes, object sizes, and representative query parameters in load profiles.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-019</strong> Execute a smoke test of the performance harness before conducting larger runs.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-020</strong> Test expected steady-state load and compare response times, throughput, and errors with agreed thresholds.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-021</strong> Test anticipated peak traffic and sudden bursts, including connection establishment and authentication overhead.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-022</strong> Run stress tests to identify the point at which latency, errors, or resource saturation exceed acceptable limits.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-023</strong> Run soak/endurance tests long enough to expose memory leaks, connection leaks, fragmentation, or accumulating queues.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-027</strong> Check indexing, query selectivity, pagination, and avoidance of unnecessary repeated queries in high-volume paths.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-028</strong> Measure transaction lock contention, deadlocks, and concurrency effects for write-heavy workflows.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-029</strong> Confirm caches have suitable keys, eviction/expiry rules, hit rates, and behavior during cold starts or failures.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-032</strong> Exercise timeouts, bounded retries, backpressure, rate limiting, and load shedding under dependency saturation.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-034</strong> Test graceful degradation and recovery after overload without indefinite backlog growth.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-035</strong> Measure performance of external dependencies and enforce contractual or permission limits during tests.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-036</strong> Compare production capacity forecasts with observed usage and prior load-test results.</p>
+</li>
+</ul>
+<h2 id="client-performance">Client performance<a class="heading-anchor" href="#client-performance" aria-label="Link to Client performance">#</a></h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-041</strong> Record page-load request count, transferred bytes, decoded resource size, and major blocking dependencies.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-042</strong> Measure time to first byte and the contribution of redirects, DNS, connection setup, and backend work to initial loading.</li>
+</ul>
+<h2 id="scaling-and-efficiency">Scaling and efficiency<a class="heading-anchor" href="#scaling-and-efficiency" aria-label="Link to Scaling and efficiency">#</a></h2>
+<ul>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-063</strong> Model the cost per request, transaction, active user, or job at expected and peak demand.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-053</strong> Estimate capacity needs using peak forecasts, observed growth, seasonal demand, and planned launches.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-054</strong> Document scaling units, bottleneck resources, quota limits, and the conditions triggering additional capacity.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-055</strong> Validate autoscaling thresholds and scale-out/scale-in behavior under realistic traffic changes when autoscaling is used.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-056</strong> Account for provisioning and warm-up delays so scaling begins early enough to protect user experience.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-057</strong> Check that stateless services can add or remove instances without losing essential user or workflow state.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-058</strong> Test load-balancer distribution, connection pooling, and uneven traffic/hot-key conditions.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-059</strong> Maintain headroom for expected failures or maintenance consistent with the service's availability objectives.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-060</strong> Evaluate regional latency and content delivery paths where users are geographically distributed.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-061</strong> Check that caches and CDNs improve latency without serving unauthorized, private, or misleadingly stale content.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-062</strong> Verify data partitioning, replication, and storage scaling strategies for projected dataset growth if applicable.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-064</strong> Compare right-sizing, caching, batching, compression, and concurrency tuning using measured outcomes.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-065</strong> Ensure background processing cannot starve customer-facing requests or saturate shared resources.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-066</strong> Test how system behavior changes when a dependency is throttled or unavailable, including backlog recovery.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-067</strong> Assess sustainable resource use, including idle overprovisioning and unnecessary repeated computation.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-068</strong> Define alerts for capacity exhaustion, budget violations, unusual resource growth, and deteriorating tail latency.</p>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-069</strong> Review and update performance forecasts after release or major changes to user demand or architecture.</p>
+</li>
+</ul>
+<h2 id="api-checks">API Checks<a class="heading-anchor" href="#api-checks" aria-label="Link to API Checks">#</a></h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-070</strong> Document traffic profiles and budgets for each critical API endpoint, operation class, and consumer.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-071</strong> Measure p50, p95, and p99 latency together with requests per second and status-code distributions under representative load.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-072</strong> Test authorization and authenticated workloads instead of benchmarking only unauthenticated happy paths.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-073</strong> Include realistic payload sizes, nested objects, query combinations, and large-response cases in API benchmarks.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-074</strong> Validate that pagination, filtering, and sorting prevent unbounded response sizes and excessive database work.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-075</strong> Measure effects of serialization, compression, schema validation, and gateway middleware on response times.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-076</strong> Identify N+1 requests, excessive fan-out, and chained downstream calls on latency-critical operations.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-077</strong> Enforce and verify request deadlines, upstream timeouts, concurrency limits, and cancellation propagation.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-078</strong> Test rate limits, quotas, backpressure, and appropriate retry guidance under controlled overload.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-079</strong> Confirm that retries and idempotency do not amplify server load or duplicate expensive actions.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-080</strong> Benchmark bulk APIs, asynchronous jobs, and streaming endpoints using appropriate throughput and completion metrics.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-081</strong> Check connection pooling, keep-alive behavior, and TLS overhead where they materially affect workload capacity.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-082</strong> Verify API cache semantics, private response isolation, cache-key correctness, and safe invalidation.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-083</strong> Test sustained traffic to detect queue growth, memory retention, and connection exhaustion.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-084</strong> Ensure performance tests exclude non-owned third-party services unless permission and safe limits have been agreed.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-085</strong> Observe endpoint-level latency, error rates, saturation, and dependencies during staged releases.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-086</strong> Verify public API contract changes do not silently alter pagination limits, timeout behavior, or payload-size expectations.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>PERF-087</strong> Confirm heavy requests and expensive queries cannot exhaust shared capacity at the expense of other consumers.</li>
+</ul>
+<h2 id="release-gate">Release gate<a class="heading-anchor" href="#release-gate" aria-label="Link to Release gate">#</a></h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Performance budgets, workload assumptions, target cohorts, and accountable owners are defined for the release's critical journeys and endpoints.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Representative baseline and relevant peak-load tests meet documented latency, throughput, error-rate, and saturation criteria, with acknowledged test-environment limitations.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Major backend or database bottlenecks, cache behavior, and overload/recovery paths are measured and either addressed or accepted with authorized risk ownership.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Applicable frontend routes have measured Core Web Vitals or equivalent user-centric measures, and critical interaction regressions have been reviewed.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Expected peak/growth demand has a documented capacity plan, scaling constraints, monitoring signals, and safe response to saturation.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>No unresolved critical performance failure jeopardizes core tasks or overload recovery without an explicit, time-bound acceptance and mitigation plan.</li>
+</ul>
+<p><strong>Domain-specific approval rule:</strong> Block performance sign-off when material latency or capacity targets are missing, critical workflows breach agreed thresholds without approved mitigation, overload causes uncontrolled failure, or regressions remain unowned. Benchmarks and Web Vitals are context-dependent; meeting a public threshold is not a universal performance guarantee.</p>
+<h2 id="trusted-references-and-scope">Trusted references and scope<a class="heading-anchor" href="#trusted-references-and-scope" aria-label="Link to Trusted references and scope">#</a></h2>
+<p>These actionable checks are informed by the following primary engineering and standards sources; they do not reproduce the source publications or imply certification.</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/">AWS Well-Architected Framework — Performance Efficiency Pillar</a> — workload selection, load testing, resource efficiency, and continual improvement.</li>
+<li><a href="https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/process-and-culture.html">AWS Well-Architected — Performance process and culture</a> — measurement, automated performance tests, and performance tuning.</li>
+<li><a href="https://sre.google/sre-book/service-best-practices/">Google SRE — Production Services Best Practices</a> — forecasting, measured capacity, and overload behavior.</li>
+<li><a href="https://sre.google/sre-book/handling-overload/">Google SRE — Handling Overload</a> — backpressure, throttling, and overload defenses.</li>
+<li><a href="https://grafana.com/docs/k6/latest/testing-guides/load-testing-websites/">Grafana k6 — Load Testing Websites</a> — realistic traffic profiles, backend versus browser testing, and test scope.</li>
+<li><a href="https://grafana.com/docs/k6/latest/testing-guides/automated-performance-testing/">Grafana k6 — Automated Performance Testing</a> — smoke, average-load, stress, spike, and soak test planning.</li>
+<li><a href="https://web.dev/articles/vitals">web.dev — Web Vitals</a> — LCP, INP, CLS, 75th-percentile thresholds, and field measurement.</li>
+<li><a href="https://web.dev/learn/performance/">web.dev — Learn Performance</a> — loading, code splitting, image loading, and client responsiveness.</li>
+<li><a href="https://opentelemetry.io/docs/concepts/signals/metrics/">OpenTelemetry — Metrics</a> — request latency, throughput, resource utilization, and telemetry cardinality.</li>
+<li><a href="https://www.postgresql.org/docs/current/using-explain.html">PostgreSQL — Using EXPLAIN</a> — query planning and database bottleneck analysis when PostgreSQL is used.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">MDN — HTTP Cache-Control</a> — browser and shared cache semantics, freshness, and private responses.</li>
+</ul>
+<p><strong>Applicability:</strong> Apply web-specific metrics only to applicable web experiences. Current commonly used Core Web Vitals 'good' thresholds are LCP at or below 2.5 seconds, INP at or below 200 milliseconds, and CLS at or below 0.1, assessed at the 75th percentile of real-user page loads for mobile and desktop separately; verify current official guidance when reviewing. PostgreSQL, cloud-native autoscaling, CDN, and asynchronous queue checks apply only if the architecture uses them. Never perform high-volume tests against infrastructure or third-party services without authorization.</p>
+<p><strong>Source review date:</strong> 2026-11-12.</p>
+<h2 id="suggested-testing-tools">Suggested testing tools<a class="heading-anchor" href="#suggested-testing-tools" aria-label="Link to Suggested testing tools">#</a></h2>
+<p>Choose tools appropriate to the project's stack and risks; automation supports evidence but does not approve the checklist.</p>
+<ul>
+<li><strong>Test focus:</strong> throughput, latency percentiles, browser responsiveness, and resource budgets; include API and service behavior where applicable.</li>
+<li><strong>Cross-stack:</strong> <a href="https://grafana.com/docs/k6/latest/">k6</a> + <a href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a>.</li>
+<li><strong>Python:</strong> <a href="https://docs.locust.io/">Locust</a> + <a href="https://pytest-benchmark.readthedocs.io/en/latest/">pytest-benchmark</a> + <a href="https://docs.pytest.org/en/stable/">pytest</a>; for pytest-based suites, run <code>python -m pytest -q</code>.</li>
+<li><strong>TypeScript:</strong> <a href="https://playwright.dev/">Playwright</a> + <a href="https://vitest.dev/">Vitest</a>; for Vitest-based suites, run <code>npx vitest run</code> (or <code>npx playwright test</code> for E2E).</li>
+<li><strong>JavaScript:</strong> <a href="https://github.com/mcollina/autocannon">autocannon</a> + <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a> + <a href="https://jestjs.io/">Jest</a>; for Jest-based suites, run <code>npx jest --ci</code> (or <code>npx playwright test</code> for E2E).</li>
+<li><strong>Evidence:</strong> Save tool versions, configuration, test environment, fixtures, results, and links in project-specific review records using the existing checklist IDs. Expert review remains necessary where relevant.</li>
+</ul>
+<h2 id="suggested-ai-skills-for-verification">Suggested AI skills for verification<a class="heading-anchor" href="#suggested-ai-skills-for-verification" aria-label="Link to Suggested AI skills for verification">#</a></h2>
+<p>These are <strong>optional agent review aids</strong>, not automated passes or release approval. Each linked repository had at least <strong>1,000 GitHub stars</strong> when checked on <strong>2026-11-12</strong>; counts are <strong>per repository, not per skill</strong>, and do not indicate security or correctness.</p>
+<ul>
+<li><strong><a href="https://github.com/addyosmani/agent-skills/blob/main/skills/performance-optimization/SKILL.md"><code>performance-optimization</code></a></strong> — Review profiling, budgets, and bottlenecks (<code>addyosmani/agent-skills</code>, <strong>116,378 repo stars</strong>).</li>
+<li><strong><a href="https://github.com/cloudflare/skills/blob/main/skills/web-perf/SKILL.md"><code>web-perf</code></a></strong> — Audit web performance when deployed on the web (<code>cloudflare/skills</code>, <strong>3,349 repo stars</strong>).</li>
+<li><strong><a href="https://github.com/wshobson/agents/blob/main/plugins/python-development/skills/python-performance-optimization/SKILL.md"><code>python-performance-optimization</code></a></strong> — Examine Python service hotspots where applicable (<code>wshobson/agents</code>, <strong>42,437 repo stars</strong>).</li>
+</ul>
+<p><strong>How to check:</strong> In a project-specific copy, have the agent audit the <strong>backend / API</strong> scope and map findings to this file's <strong>existing checklist IDs</strong>, with code/configuration references, reproducible test results, failed or inapplicable cases, and uncertainties. Independently verify findings; keep shared template boxes unchecked and retain human approval requirements.</p>
+<p><strong>Before use:</strong> Read the skill's <code>SKILL.md</code>, referenced scripts, license, and requested tool permissions. Only execute vetted skills with appropriate access in a controlled environment.</p>
+<h2 id="important-warning-reference-only">Important warning: reference only<a class="heading-anchor" href="#important-warning-reference-only" aria-label="Link to Important warning: reference only">#</a></h2>
+<blockquote>
+<p>⚠️ <strong>Reference only — not a definitive or exhaustive checklist.</strong> This template is a starting point for review, not the ultimate authority or a guarantee of project safety, quality, regulatory compliance, accessibility, security, or launch readiness.</p>
+<p><strong>Use project-specific judgment and independent verification.</strong> Requirements and risks evolve and differ by project, technology, and jurisdiction. Adapt the checks, consult current authoritative sources, perform relevant tests, and obtain qualified specialist review or approval when appropriate. Checking every box does not replace these steps.</p>
+</blockquote>
+</article><div class="page-footer"><strong>Reference, not a certification.</strong> Check applicability, verify important claims against current primary sources, and seek expert review where necessary. <a href="../index.html#contributions-and-suggestions-are-encouraged">Suggest an improvement</a>.</div></main>
+  <aside class="on-this-page" aria-label="On this page"><div class="toc-title">ON THIS PAGE</div><a class="toc-link level-2" href="#review-details">Review details</a><a class="toc-link level-2" href="#how-to-use">How to use</a><a class="toc-link level-2" href="#performance-budgets-and-measurements">Performance budgets and measurements</a><a class="toc-link level-2" href="#backend-throughput-and-capacity">Backend throughput and capacity</a><a class="toc-link level-2" href="#client-performance">Client performance</a><a class="toc-link level-2" href="#scaling-and-efficiency">Scaling and efficiency</a><a class="toc-link level-2" href="#api-checks">API Checks</a><a class="toc-link level-2" href="#release-gate">Release gate</a><a class="toc-link level-2" href="#trusted-references-and-scope">Trusted references and scope</a><a class="toc-link level-2" href="#suggested-testing-tools">Suggested testing tools</a><a class="toc-link level-2" href="#suggested-ai-skills-for-verification">Suggested AI skills for verification</a><a class="toc-link level-2" href="#important-warning-reference-only">Important warning: reference only</a></aside>
+</div>
+<footer class="site-footer"><span>Built from Markdown · Designed for thoughtful reviews</span><span><a href="https://github.com/Pro-GenAI/awesome-checklists">Source on GitHub</a> · <a href="../llms.txt">llms.txt</a></span></footer>
+</body>
+</html>
