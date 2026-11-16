@@ -264,6 +264,7 @@ def page_html(page_path: Path, title: str, description: str, scope: str, body: s
   <meta property="og:url" content="{esc(url)}">
   <meta name="twitter:card" content="summary">
   <link rel="alternate" type="text/plain" title="LLM content index" href="{esc(prefix)}llms.txt">
+  <link rel="icon" type="image/svg+xml" href="{esc(prefix)}assets/favicon.svg">
   <link rel="stylesheet" href="{esc(prefix)}assets/site.css">
   <script src="{esc(prefix)}assets/site.js" defer></script>
   <script type="application/ld+json">{jsonld(structured)}</script>

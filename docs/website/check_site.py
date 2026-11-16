@@ -14,6 +14,7 @@ class HeadParser(HTMLParser):
         self.description = False
         self.canonical = False
         self.schema = False
+        self.favicon_href: str | None = None
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         data = dict(attrs)
@@ -21,6 +22,8 @@ class HeadParser(HTMLParser):
         self.description |= tag == "meta" and data.get("name") == "description" and bool(data.get("content"))
         self.canonical |= tag == "link" and data.get("rel") == "canonical" and bool(data.get("href"))
         self.schema |= tag == "script" and data.get("type") == "application/ld+json"
+        if tag == "link" and data.get("rel") == "icon" and data.get("type") == "image/svg+xml":
+            self.favicon_href = data.get("href")
 
 
 def main() -> None:
@@ -30,10 +33,15 @@ def main() -> None:
     expected.update(Path(scope) / "index.html" for scope in build.SCOPES[1:])
     present = {p.relative_to(output) for p in output.rglob("*.html")}
     assert expected == present, f"Missing: {expected - present}; unexpected: {present - expected}"
+    favicon = (output / "assets" / "favicon.svg").resolve()
+    assert favicon.is_file(), "Favicon was not copied into site assets"
     for path in present:
         parser = HeadParser()
         parser.feed((output / path).read_text(encoding="utf-8"))
         assert all((parser.title, parser.description, parser.canonical, parser.schema)), f"SEO metadata missing: {path}"
+        assert parser.favicon_href, f"Favicon link missing: {path}"
+        linked_favicon = ((output / path).parent / parser.favicon_href).resolve()
+        assert linked_favicon == favicon, f"Incorrect favicon path: {path}"
     sitemap = ElementTree.parse(output / "sitemap.xml")
     assert len(sitemap.getroot()) == len(expected), "Sitemap does not list every HTML page"
     llms = (output / "llms.txt").read_text(encoding="utf-8")

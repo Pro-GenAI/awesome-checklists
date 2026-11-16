@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Awesome Checklists</title>
+  <defs>
+    <linearGradient id="navy" x2="1" y2="1">
+      <stop stop-color="#061C38"/>
+      <stop offset="1" stop-color="#073B55"/>
+    </linearGradient>
+    <linearGradient id="green" x2="1" y2="1">
+      <stop stop-color="#59EE88"/>
+      <stop offset="1" stop-color="#06A66E"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#navy)"/>
+  <rect x="12" y="12" width="40" height="40" rx="11" fill="url(#green)"/>
+  <path d="m21 32 8 8 15-17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
