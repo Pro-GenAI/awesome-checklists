@@ -23,4 +23,4 @@ The current stable [Model Context Protocol specification is **2026-07-28**](http
 
 ## Refresh process
 
-For a material AI release or at least quarterly, check the four official source families, record the exact publication/version, date consulted, relevant changed clauses or risks, checklist IDs affected, owner, applicability and evidence. Add new checks only for independently verifiable gaps; preserve stable IDs and record successor/moved IDs in [ID history](id-history.md) and [CHANGELOG](../../CHANGELOG.md). Reviewers must assess the current legal text, not merely a dated summary.
+For a material AI release or at least quarterly, check the four official source families, record the exact publication/version, date consulted, relevant changed clauses or risks, checklist IDs affected, owner, applicability and evidence. Add new checks only for independently verifiable gaps; preserve stable IDs and record successor/moved IDs in [ID history](id-history.md) and [CHANGELOG](../../docs/CHANGELOG.md). Reviewers must assess the current legal text, not merely a dated summary.

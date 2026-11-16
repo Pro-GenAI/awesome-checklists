@@ -16,7 +16,7 @@
 | 2026-11-15 | SEC-110–SEC-112 | Split multi-part session lifecycle/recovery control SEC-009 | SEC-009 now covers session expiry; SEC-110 rotation, SEC-111 logout revocation and SEC-112 recovery token expiry/single-use and replay resistance require separate evidence. |
 | 2026-11-15 | SEC-113–SEC-115 | Split multi-surface automated abuse defenses from SEC-010 | SEC-010 now covers login brute-force/credential stuffing; SEC-113 signup, SEC-114 recovery and SEC-115 verification-message abuse are separately testable. |
 
-**Retired/deleted Security IDs:** none documented. **Reused IDs:** none. **Historical section order:** IDs may move between sections/files for scope clarity, but their meaning and reference remain stable as far as practical. Any later retirement, semantic change or owner move must be recorded here and in [CHANGELOG.md](../../CHANGELOG.md) before release.
+**Retired/deleted Security IDs:** none documented. **Reused IDs:** none. **Historical section order:** IDs may move between sections/files for scope clarity, but their meaning and reference remain stable as far as practical. Any later retirement, semantic change or owner move must be recorded here and in [CHANGELOG.md](../../docs/CHANGELOG.md) before release.
 
 ## Maintenance
 

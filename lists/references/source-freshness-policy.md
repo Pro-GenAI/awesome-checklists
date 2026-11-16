@@ -2,7 +2,7 @@
 
 **As of 2026-11-15:** Source-review metadata is tracked per numbered checklist as `**Source review date:** YYYY-MM-DD.` This is the date a maintainer last evaluated the listed sources; **it does not guarantee that every link is reachable, that standards still apply, or that each check has been independently validated**.
 
-A source review older than **180 days** is flagged as stale. Check the version and status of material primary sources, current effective dates for statutes/regulations, affected ID-to-standard mappings, and compatibility with the deployed platform/SDK. When changes affect a check, update the check, [ID history](id-history.md), [CHANGELOG](../../CHANGELOG.md), and related crosswalks. Only advance the source-review date after rechecking relevant sources; changing a timestamp alone is not an audit.
+A source review older than **180 days** is flagged as stale. Check the version and status of material primary sources, current effective dates for statutes/regulations, affected ID-to-standard mappings, and compatibility with the deployed platform/SDK. When changes affect a check, update the check, [ID history](id-history.md), [CHANGELOG](../../docs/CHANGELOG.md), and related crosswalks. Only advance the source-review date after rechecking relevant sources; changing a timestamp alone is not an audit.
 
 **Automated check:**
 
