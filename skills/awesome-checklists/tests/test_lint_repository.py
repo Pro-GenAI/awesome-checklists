@@ -79,14 +79,17 @@ class LintTests(unittest.TestCase):
         )
         self.assertEqual(linter.extract_links(document), ["doc.md", "other.md"])
 
-    def test_readme_matches_agent_registry_and_leaves_process_to_contributing(self):
+    def test_development_matches_agent_registry_and_readme_leaves_process_to_contributing(self):
         root = Path(__file__).resolve().parents[3]
         readme = (root / "README.md").read_text(encoding="utf-8")
+        development = (root / "DEVELOPMENT.md").read_text(encoding="utf-8")
         prefixes = json.loads(
             (root / "lists/references/id-prefix-ranges.json").read_text(encoding="utf-8")
         )
         agent_count = prefixes["prefixes"]["AGENT"]["count"]
-        self.assertIn(f"check all {agent_count} IDs and section links", readme)
+        self.assertIn(f"check all {agent_count} IDs and section links", development)
+        self.assertNotIn(f"check all {agent_count} IDs and section links", readme)
+        self.assertIn("[DEVELOPMENT.md](DEVELOPMENT.md)", readme)
         self.assertIn("[CONTRIBUTING.md](CONTRIBUTING.md)", readme)
         self.assertNotIn("No pull request is required.", readme)
         self.assertNotIn("commit directly to `main`", readme)
