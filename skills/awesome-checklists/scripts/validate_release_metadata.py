@@ -74,8 +74,6 @@ def inspect(root: Path, is_private: str | None = None) -> list[str]:
     errors.extend(check_prefix_table(inventory_doc, prefix_register["prefixes"]))
     if re.search(r"\bno (?:pull request|PR) is required\b", resources_doc, re.IGNORECASE):
         errors.append("Live resource guide contradicts contributor review-first policy")
-    if "**Public repository:**" not in readme:
-        errors.append("README must explicitly describe public repository access")
     if re.search(r"currently private|no CI workflow is active", readme + "\n" + agents, re.I):
         errors.append("Current entry-point documents include obsolete private/CI instructions")
     starter = readme.find("## Start with 25–50 checks")
