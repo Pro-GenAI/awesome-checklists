@@ -33,3 +33,5 @@ python3 -m unittest discover -s skills/awesome-checklists/tests -v
 ```
 
 **Automation status:** Historical [source lint](.github/workflows/checklist-lint.yml.disabled) and [website build](.github/workflows/website.yml.disabled) remain disabled; [curation quality](.github/workflows/quality-gates.yml) runs on PRs and pushes, while [curated link health](.github/workflows/link-health.yml) runs weekly. Continue running the full local validations above when appropriate.
+
+Don't use or edit ./lists/AGENTS.md.
