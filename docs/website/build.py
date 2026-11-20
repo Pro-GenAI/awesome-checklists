@@ -20,7 +20,7 @@ import mistune
 WEBSITE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = WEBSITE_DIR.parent.parent
 LISTS_DIR = REPO_ROOT / "lists"
-DEFAULT_SITE_URL = "https://pro-genai.github.io/awesome-checklists/"
+DEFAULT_SITE_URL = "https://awesome-checklists.pro-genai.com/"
 GITHUB_REPO = "https://github.com/Pro-GenAI/awesome-checklists"
 SCOPES = ("shared", "frontend", "backend", "AI")
 SCOPE_LABELS = {"shared": "Shared", "frontend": "Frontend", "backend": "Backend", "AI": "AI"}
