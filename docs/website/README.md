@@ -50,7 +50,7 @@ To specify your real public URL (important for canonical URLs, sitemap, robots.t
 SITE_URL="https://your-domain.example/" bash docs/website/build.sh
 ```
 
-The default is `https://pro-genai.github.io/awesome-checklists/`, intended for GitHub project Pages. **Change `SITE_URL` if you deploy elsewhere**; the default is a build setting, not a claim that the site is already published.
+The default is `https://awesome-checklists.pro-genai.com/`, configured for the production Cloudflare Pages custom domain. **Change `SITE_URL` if you deploy elsewhere**; the default is a build setting, not a claim that the site is already published.
 
 For a preconfigured environment, install `pip install -r docs/website/requirements.txt` and run `WEBSITE_NO_VENV=1 bash docs/website/build.sh`.
 
@@ -72,7 +72,7 @@ Generated HTML is excluded from Git; `docs/website/dist/` is a deployable output
 
 ## Deployment
 
-Cloudflare Pages deploys the `main` branch to https://awesome-checklists.pages.dev/ using `SITE_URL=https://awesome-checklists.pages.dev/ bash docs/website/build.sh` and the `docs/website/dist` output directory. Both GitHub Actions workflows are disabled as `.github/workflows/website.yml.disabled` and `.github/workflows/checklist-lint.yml.disabled`; none run automatically. To validate locally, run `python3 -m unittest discover -s skills/awesome-checklists/tests -v`, `python3 skills/awesome-checklists/scripts/validate_inventory.py`, `bash docs/website/build.sh`, and `python3 docs/website/check_site.py` from the repository root. Re-enable CI only through a separate, intentional decision.
+Cloudflare Pages deploys the `main` branch to https://awesome-checklists.pro-genai.com/ using `SITE_URL=https://awesome-checklists.pro-genai.com/ bash docs/website/build.sh` and the `docs/website/dist` output directory. Both GitHub Actions workflows are disabled as `.github/workflows/website.yml.disabled` and `.github/workflows/checklist-lint.yml.disabled`; none run automatically. To validate locally, run `python3 -m unittest discover -s skills/awesome-checklists/tests -v`, `python3 skills/awesome-checklists/scripts/validate_inventory.py`, `bash docs/website/build.sh`, and `python3 docs/website/check_site.py` from the repository root. Re-enable CI only through a separate, intentional decision.
 
 ## Maintain
 
