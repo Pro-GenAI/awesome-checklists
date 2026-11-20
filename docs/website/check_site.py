@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: MIT
 """Sanity-check generated pages, SEO files, and the Markdown inventory."""
 from html.parser import HTMLParser
+import os
 from pathlib import Path
 from xml.etree import ElementTree
 
@@ -44,7 +45,16 @@ def main() -> None:
         linked_favicon = ((output / path).parent / parser.favicon_href).resolve()
         assert linked_favicon == favicon, f"Incorrect favicon path: {path}"
     sitemap = ElementTree.parse(output / "sitemap.xml")
-    assert len(sitemap.getroot()) == len(expected), "Sitemap does not list every HTML page"
+    locs = [node.text for node in sitemap.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
+    base = os.environ.get("SITE_URL", build.DEFAULT_SITE_URL).rstrip("/") + "/"
+    assert len(locs) == len(expected), "Sitemap does not list every HTML page"
+    assert len(set(locs)) == len(locs), "Sitemap contains duplicate URLs"
+    assert set(locs) == {build.canonical(base, path) for path in expected}, "Sitemap URLs do not match canonical site URL"
+    robots = (output / "robots.txt").read_text(encoding="utf-8")
+    assert f"Sitemap: {base}sitemap.xml" in robots, "robots.txt sitemap URL is incorrect"
+    for path in present:
+        content = (output / path).read_text(encoding="utf-8")
+        assert f'<link rel="canonical" href="{build.canonical(base, path)}">' in content, f"Canonical URL is incorrect: {path}"
     llms = (output / "llms.txt").read_text(encoding="utf-8")
     for source in sources:
         if source.name not in {"README.md", "AGENTS.md"}:
