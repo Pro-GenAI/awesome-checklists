@@ -41,7 +41,7 @@ jobs:
           grep -q 'awesome-checklists' /tmp/awesome-checklists-skills.txt
       - name: Build static site
         env:
-          SITE_URL: https://awesome-checklists.pages.dev/
+          SITE_URL: https://awesome-checklists.pro-genai.com/
           WEBSITE_NO_VENV: '1'
         run: bash docs/website/build.sh
       - name: Validate generated pages
