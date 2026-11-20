@@ -50,14 +50,14 @@ To specify your real public URL (important for canonical URLs, sitemap, robots.t
 SITE_URL="https://your-domain.example/" bash docs/website/build.sh
 ```
 
-The default is `https://awesome-checklists.pro-genai.com/`, configured for the production Cloudflare Pages custom domain. **Change `SITE_URL` if you deploy elsewhere**; the default is a build setting, not a claim that the site is already published.
+The default canonical origin is `https://awesome-checklists.pro-genai.com/`. Cloudflare Pages serves the generated HTML at extensionless URLs; a plain local static server may not resolve those URLs.
 
 For a preconfigured environment, install `pip install -r docs/website/requirements.txt` and run `WEBSITE_NO_VENV=1 bash docs/website/build.sh`.
 
 ## What gets generated
 
 - `index.html` from root `README.md`
-- A matching `.html` page for **every other published source Markdown file**. Checklist sources move under `lists/`, but published HTML retains its pre-move URLs (e.g., `AI/10_RAG_and_Knowledge_Bases.html`), preserving existing inbound links. Unnumbered root and `lists/**/references/` files appear as searchable **Resources**, not as checklists; existing resource page URLs are preserved.
+- A matching `.html` file for **every other published source Markdown file**, served by Cloudflare at an extensionless URL (e.g., `AI/10_RAG_and_Knowledge_Bases`). Unnumbered root and `lists/**/references/` files appear as searchable **Resources**, not as checklists.
 - Landing pages for the `lists/frontend/`, `lists/backend/`, and `lists/AI/` collections
 - Reader resources including `docs/CHANGELOG.md`, `docs/AUTHORSHIP.md`, `lists/references/optional-testing-tools.md`, `lists/references/id-prefix-ranges.md`, `lists/references/source-freshness-policy.md`, `lists/references/security-surface-coverage.md`, `lists/references/agent-domain-map.md`, `lists/references/agent-testing-tools.md`, `lists/references/minimum-viable-by-scope.md`, `lists/references/scoped-review-generator.md`, `lists/references/control-crosswalk.md`, `lists/references/core-50.md`, [shared review method](../../lists/references/review-method.md), [optional compliance crosswalk](../../lists/references/compliance-crosswalk.md), the worked review and overlap analysis. The machine-readable `lists/references/core-50.json` lives in the source repository; generate the full **4,215-check** JSON catalog locally using `python3 skills/awesome-checklists/scripts/export_checklists.py --output checklists.json`. Core 50 priorities are curated; remaining tiers are preliminary text-rule-derived triage.
 - A client-side searchable index (`search-index.json`) and assets (`assets/`)

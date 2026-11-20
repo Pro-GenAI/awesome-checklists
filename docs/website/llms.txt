@@ -12,5 +12,5 @@ This collection is a reference, not the definitive or exhaustive source of truth
 ## Start here
 
 - [Overview and how to use]({{SITE_URL}}): Purpose, workflow, important warnings, and contribution guidance.
-- [Contributor and AI-agent guide]({{SITE_URL}}AGENTS.html): Scope ownership, stable checklist IDs, and repository maintenance conventions.
+- [Contributor and AI-agent guide]({{SITE_URL}}AGENTS): Scope ownership, stable checklist IDs, and repository maintenance conventions.
 

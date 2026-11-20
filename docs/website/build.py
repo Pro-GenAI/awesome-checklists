@@ -76,12 +76,14 @@ def output_path(source: Path) -> Path:
 
 
 def relative_link(target: Path, current: Path) -> str:
-    return os.path.relpath(str(target), start=str(current.parent)).replace(os.sep, "/")
+    if target.name == "index.html":
+        return os.path.relpath(str(target.parent), start=str(current.parent)).replace(os.sep, "/").rstrip("/") + "/"
+    return os.path.relpath(str(target.with_suffix("")), start=str(current.parent)).replace(os.sep, "/")
 
 
 def all_sources() -> list[Path]:
     return sorted(
-        (p for p in REPO_ROOT.rglob("*.md") if not any(part in SKIP_DIRS for part in p.relative_to(REPO_ROOT).parts)),
+        (p for p in REPO_ROOT.rglob("*.md") if p != LISTS_DIR / "AGENTS.md" and not any(part in SKIP_DIRS for part in p.relative_to(REPO_ROOT).parts)),
         key=lambda p: p.relative_to(REPO_ROOT).as_posix().casefold(),
     )
 
@@ -159,10 +161,10 @@ class DocRenderer(mistune.HTMLRenderer):
 
 
 def canonical(base: str, path: Path) -> str:
-    # Prefer clean directory URLs for landing pages; assets still link to index.html.
+    # Cloudflare Pages serves HTML files at extensionless URLs.
     if path.name == "index.html":
         return base if path.parent == Path(".") else base + quote(path.parent.as_posix(), safe="/._-~") + "/"
-    return base + quote(path.as_posix(), safe="/._-~")
+    return base + quote(path.with_suffix("").as_posix(), safe="/._-~")
 
 
 def jsonld(value: object) -> str:
@@ -295,7 +297,7 @@ def index_page(scope: str, pages: list[Page]) -> tuple[str, str, list[tuple[int,
                "backend": "API contracts, databases, service reliability, operations, security, and server-side integrations.",
                "AI": "Model selection, data, evaluation, RAG, agent systems, guardrails, and monitoring."}
     lead = details[scope]
-    cards = "".join(f'<a class="collection-card" href="{esc(p.output.name)}"><span class="collection-card-label">CHECKLIST</span><strong>{esc(pretty_title(p.title))}</strong><span>{esc(p.description[:125])}</span><span class="card-action">Explore checklist →</span></a>' for p in group)
+    cards = "".join(f'<a class="collection-card" href="{esc(relative_link(p.output, Path(scope) / "index.html"))}"><span class="collection-card-label">CHECKLIST</span><strong>{esc(pretty_title(p.title))}</strong><span>{esc(p.description[:125])}</span><span class="card-action">Explore checklist →</span></a>' for p in group)
     body = f'<h1>{esc(label)} checklists</h1><p class="collection-lead">{esc(lead)}</p><p class="muted">{len(group)} actionable reference checklists. Pick what applies to your project; these are not universal requirements or certifications.</p><div class="collection-grid">{cards}</div>'
     return body, f"{label} software development review checklists. {lead}", []
 
@@ -348,7 +350,7 @@ def build(output_dir: Path, base: str) -> int:
     search_items = []
     for page in pages:
         headings = re.findall(r"^#{2,3}\s+(.+)$", page.content, flags=re.MULTILINE)
-        search_items.append({"title": page.title, "url": page.output.as_posix(), "scope": "Resources" if is_resource(page) else SCOPE_LABELS[page.scope],
+        search_items.append({"title": page.title, "url": "./" if page.output == Path("index.html") else page.output.with_suffix("").as_posix(), "scope": "Resources" if is_resource(page) else SCOPE_LABELS[page.scope],
                              "description": page.description, "terms": text_only(" ".join(headings[:24]))[:900]})
     (output_dir / "search-index.json").write_text(json.dumps(search_items, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     urls = [p.output for p in pages] + [Path(scope) / "index.html" for scope in SCOPES[1:]]

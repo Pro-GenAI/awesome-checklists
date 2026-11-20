@@ -2,8 +2,10 @@
 # SPDX-License-Identifier: MIT
 """Sanity-check generated pages, SEO files, and the Markdown inventory."""
 from html.parser import HTMLParser
+import json
 import os
 from pathlib import Path
+from urllib.parse import urlsplit
 from xml.etree import ElementTree
 
 import build
@@ -17,6 +19,7 @@ class HeadParser(HTMLParser):
         self.canonical = False
         self.schema = False
         self.favicon_href: str | None = None
+        self.page_links: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         data = dict(attrs)
@@ -26,9 +29,14 @@ class HeadParser(HTMLParser):
         self.schema |= tag == "script" and data.get("type") == "application/ld+json"
         if tag == "link" and data.get("rel") == "icon" and data.get("type") == "image/svg+xml":
             self.favicon_href = data.get("href")
+        if tag == "a" and data.get("href"):
+            self.page_links.append(data["href"])
 
 
 def main() -> None:
+    assert build.canonical("https://awesome-checklists.pro-genai.com/", Path("AI/example.html")) == "https://awesome-checklists.pro-genai.com/AI/example"
+    assert build.relative_link(Path("frontend/index.html"), Path("frontend/example.html")) == "./"
+    assert build.relative_link(Path("AI/example.html"), Path("frontend/index.html")) == "../AI/example"
     output = build.WEBSITE_DIR / "dist"
     sources = build.all_sources()
     expected = {build.output_path(p) for p in sources}
@@ -41,6 +49,9 @@ def main() -> None:
         parser = HeadParser()
         parser.feed((output / path).read_text(encoding="utf-8"))
         assert all((parser.title, parser.description, parser.canonical, parser.schema)), f"SEO metadata missing: {path}"
+        for link in parser.page_links:
+            url = urlsplit(link)
+            assert url.netloc not in ("", "awesome-checklists.pro-genai.com", "awesome-checklists.pages.dev") or not url.path.endswith(".html"), f"HTML URL in {path}: {link}"
         assert parser.favicon_href, f"Favicon link missing: {path}"
         linked_favicon = ((output / path).parent / parser.favicon_href).resolve()
         assert linked_favicon == favicon, f"Incorrect favicon path: {path}"
@@ -57,10 +68,12 @@ def main() -> None:
         assert f'<link rel="canonical" href="{build.canonical(base, path)}">' in content, f"Canonical URL is incorrect: {path}"
     llms = (output / "llms.txt").read_text(encoding="utf-8")
     for source in sources:
-        if source.name not in {"README.md", "AGENTS.md"}:
-            assert build.output_path(source).name in llms, f"Missing llms index entry: {source}"
+        page = build.make_page(source)
+        if build.is_checklist(page) or build.is_resource(page):
+            assert build.canonical(base, page.output) in llms, f"Missing llms index entry: {source}"
     assert (output / "robots.txt").is_file()
-    assert (output / "search-index.json").is_file()
+    search = json.loads((output / "search-index.json").read_text(encoding="utf-8"))
+    assert all(not item["url"].endswith(".html") for item in search), "Search contains HTML URLs"
     print(f"Validated {len(expected)} HTML pages, metadata, sitemap, llms.txt, and search assets")
 
 
