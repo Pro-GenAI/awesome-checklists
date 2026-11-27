@@ -4,7 +4,7 @@
 
 ## Licensing provenance is separate from content validation
 
-Original editorial text is intended for CC0 and original executable tooling for MIT under the [licensing scope guide](LICENSING.md). Neither the incomplete historical per-ID authorship record nor automated formatting checks establish that Pro-GenAI has rights to waive copyright in *every* existing contribution or any third-party excerpt. For new and historical content, track author/source, permission and exceptions before claiming CC0 coverage; an SPDX marker is an identification aid, not a clearance decision. External standards and trademarks are not relicensed.
+Original editorial text is intended for CC0 and original executable tooling for MIT under the [licensing scope guide](LICENSING.md). Neither the incomplete historical per-ID authorship record nor automated formatting checks establish that Praneeth Vadlapati has rights to waive copyright in *every* existing contribution or any third-party excerpt. For new and historical content, track author/source, permission and exceptions before claiming CC0 coverage; an SPDX marker is an identification aid, not a clearance decision. External standards and trademarks are not relicensed.
 
 ## What has and has not been validated
 

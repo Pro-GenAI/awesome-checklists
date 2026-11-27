@@ -24,7 +24,7 @@
 
 ## 2026-11-16 — MIT licensing and disabled GitHub Actions
 
-- Licensed original code, written checklists and documentation under MIT (Copyright 2026 Pro-GenAI), with third-party rights retained.
+- Licensed original code, written checklists and documentation under MIT (Copyright 2026 Praneeth Vadlapati), with third-party rights retained.
 - Renamed the active source workflow to `.github/workflows/checklist-lint.yml.disabled`; website CI was already disabled. Updated live documentation to require local checks.
 - Added bounded transient fetch retries with offline regression tests; ordinary HTTP 404 and lengthy rate-limit waits are not retried.
 - No change to checklist counts, IDs, priorities, or external review status.

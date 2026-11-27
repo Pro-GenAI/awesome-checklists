@@ -40,7 +40,7 @@ class ReleaseMetadataTests(unittest.TestCase):
         self.assertTrue(content_license.startswith("CC0 1.0 Universal"))
         self.assertIn("Statement of Purpose", content_license)
         self.assertTrue(code_license.startswith("MIT License"))
-        self.assertIn("Copyright (c) 2026 Pro-GenAI", code_license)
+        self.assertIn("Copyright (c) 2026 Praneeth Vadlapati", code_license)
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("[CC0 1.0 Universal](LICENSE)", readme)
         self.assertIn("[MIT License](LICENSE-CODE)", readme)

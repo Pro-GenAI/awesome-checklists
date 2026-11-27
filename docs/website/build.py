@@ -247,7 +247,7 @@ def page_html(page_path: Path, title: str, description: str, scope: str, body: s
                  {"@type": "ListItem", "position": 3, "name": title, "item": url}]
         structured = {"@context": "https://schema.org", "@graph": [
             {"@type": "TechArticle", "headline": title, "description": description, "mainEntityOfPage": url,
-             "author": {"@type": "Organization", "name": "Pro-GenAI"}, "isPartOf": website},
+             "author": {"@type": "Person", "name": "Praneeth Vadlapati"}, "isPartOf": website},
             {"@type": "BreadcrumbList", "itemListElement": trail}]}
     page_title = "Awesome Checklists — Practical Software & AI Review Guides" if homepage else f"{title} | Awesome Checklists"
     return f'''<!doctype html>

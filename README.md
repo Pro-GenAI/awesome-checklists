@@ -153,14 +153,14 @@ Copy this Markdown into your project's README (no badge hosting required):
 For a self-hosted SVG badge option, see [badge assets](docs/DEVELOPMENT.md#self-hosted-review-badge).
 
 > [!IMPORTANT]
-> **This is a maintainer's self-declaration of having used the checklists, not an approval issued by Pro-GenAI or an independent audit.** The badge does not certify security, compliance, accessibility, AI safety, or release readiness. Display it only after relevant checks were evaluated and results, outstanding risks, and exceptions were documented. Include a link to the project's own review summary where appropriate, and update or remove the badge if its basis is no longer current.
+> **This is a maintainer's self-declaration of having used the checklists, not an approval issued by Praneeth Vadlapati or an independent audit.** The badge does not certify security, compliance, accessibility, AI safety, or release readiness. Display it only after relevant checks were evaluated and results, outstanding risks, and exceptions were documented. Include a link to the project's own review summary where appropriate, and update or remove the badge if its basis is no longer current.
 
 ### Optional credit for reuse (no review claim)
 
 CC0 does **not** require attribution, but a link helps others discover and improve the source. If you use the checklists without performing a documented review, you can voluntarily write:
 
 ```markdown
-Uses [awesome-checklists](https://github.com/Pro-GenAI/awesome-checklists) by Pro-GenAI.
+Uses [awesome-checklists](https://github.com/Pro-GenAI/awesome-checklists) by Praneeth Vadlapati.
 ```
 
 This credit is **not** a certification, endorsement or substitute for the documented-review badge above. See the [licensing guide](docs/LICENSING.md) for details.

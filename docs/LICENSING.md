@@ -4,7 +4,7 @@
 
 This repository intentionally uses **CC0 1.0 for original checklist and editorial material** and **MIT for original executable code and automation**. The goal is to make commercial and internal reuse straightforward without imposing a share-alike or noncommercial requirement. This guide explains scope; the actual license texts are [LICENSE](../LICENSE) and [LICENSE-CODE](../LICENSE-CODE).
 
-**Rights qualification:** A license applies only to material for which Pro-GenAI or its contributors hold the necessary rights to grant it. The following path guide is **not** a claim that third-party excerpts, linked standards, protected marks, or all historical contributions have been cleared. If a file includes a separately credited or uncleared component, that component keeps its own rights.
+**Rights qualification:** A license applies only to material for which Praneeth Vadlapati or other contributors hold the necessary rights to grant it. The following path guide is **not** a claim that third-party excerpts, linked standards, protected marks, or all historical contributions have been cleared. If a file includes a separately credited or uncleared component, that component keeps its own rights.
 
 ## File-level scope
 
@@ -30,7 +30,7 @@ Where safe for the syntax, original executable files carry `SPDX-License-Identif
 
 - **Checklist text under CC0:** Use and adapt, including inside proprietary commercial products, without an attribution obligation under CC0. A waiver or fallback license applies only to the rights its grantor controls.
 - **MIT software:** Use, modify and redistribute commercially, including in proprietary systems; include the MIT copyright and permission notice in copies or substantial portions of the software.
-- **Credit is welcome, not required for CC0 content:** Consider `Uses [awesome-checklists](https://github.com/Pro-GenAI/awesome-checklists) by Pro-GenAI` with a link. This is distinct from the optional **Reviewed with awesome-checklists** badge, which should be displayed only after an actual documented review; neither indicates certification, approval, or endorsement.
+- **Credit is welcome, not required for CC0 content:** Consider `Uses [awesome-checklists](https://github.com/Pro-GenAI/awesome-checklists) by Praneeth Vadlapati` with a link. This is distinct from the optional **Reviewed with awesome-checklists** badge, which should be displayed only after an actual documented review; neither indicates certification, approval, or endorsement.
 - **No automatic rights to trademarks, patents, or third-party materials:** Do not imply partnership, approval, or that external standards are sublicensed by this project.
 
 ## Contribution and historical-rights checks
